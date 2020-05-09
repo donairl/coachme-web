@@ -28,7 +28,7 @@ $list=ArrayHelper::map($m,'files','files');
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
-
+    <?= $form->field($model, 'sort_no') ?>
     <?= $form->field($model, 'menuicon')->dropDownList($list,['prompt'=>Yii::t('app','Please Select...') ]); ?>
 
     <div class="form-group">

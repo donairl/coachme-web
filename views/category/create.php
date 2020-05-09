@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\MaCategory */
 
-$this->title = Yii::t('app', 'Create Ma Category');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Ma Categories'), 'url' => ['index']];
+$this->title = Yii::t('app', 'Buat Kategori');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Kategori'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="ma-category-create page white-box">

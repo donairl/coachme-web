@@ -18,6 +18,16 @@ body {
 
 }
 
+.btn-grey{
+    background:#9b897e;
+    color:white;
+}
+
+.btn-grey:hover{
+    background:#343a40;
+    color:#ccc !important;
+}
+
 .head .navbar-nav > li > a {
     font-size:18px;
     color:#F4F4F4;

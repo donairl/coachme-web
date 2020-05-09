@@ -29,11 +29,11 @@ $this->params['breadcrumbs'][] = $this->title;
                      <?= Html::a('<span class="glyphicon glyphicon-user"></span> User', ['users/index'], ['class' => 'btn-lg btn-primary']) ?>
                      </div>
                      <div class="col-lg-4 col-sm-12">
-                     <?= Html::a('<span class="glyphicon glyphicon-tags"></span> Service', ['product/index'], ['class' => 'btn-lg btn-primary']) ?>
+                     <?= Html::a('<span class="glyphicon glyphicon-tags"></span> Video Content', ['product/index'], ['class' => 'btn-lg btn-primary']) ?>
                      </div>
                     
                      <div class="col-lg-4 col-sm-12">
-                     <?= Html::a('<span class="glyphicon glyphicon-wrench"></span> Dept/Bidang', ['department/index'], ['class' => 'btn-lg btn-primary']) ?>
+                     <?= Html::a('<span class="glyphicon glyphicon-wrench"></span> Kategori', ['department/index'], ['class' => 'btn-lg btn-primary']) ?>
                      </div>
 
                     </div> 
@@ -43,7 +43,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     
                     <div class="row">
                      <div class="col-lg-4">
-                     <?= Html::a('<span class="glyphicon glyphicon-user"></span> Category', ['category/index'], ['class' => 'btn-lg btn-primary']) ?>
+                     <?= Html::a('<span class="glyphicon glyphicon-user"></span> Sub Kategori', ['category/index'], ['class' => 'btn-lg btn-primary']) ?>
                      </div>
                      <div class="col-lg-4">
                      <?= Html::a('<span class="glyphicon glyphicon-tags"></span> Payment', ['product/index'], ['class' => 'btn-lg btn-primary']) ?>
