@@ -1,0 +1,319 @@
+
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #edf1f5
+}
+
+.head{
+    width:100%;
+    border: 1px solid #232330;
+    background:#343a40;
+    opacity: 0.5px;
+   
+    
+
+}
+
+.head .navbar-nav > li > a {
+    font-size:18px;
+    color:#F4F4F4;
+}
+
+.white-box{
+    background-color: #fff;
+    border: #232330 1px solid;
+}
+
+.head .navbar-brand {
+    color: #fff;
+    font-family:  cursive;
+    font-size: 32px;
+   /* font-family: 'Lobster Two', cursive;*/
+}
+
+ .head .navbar-nav > .active > a, 
+
+ .head .navbar-nav > .active > a:focus {
+    color: #fff;
+    font-weight: bold;
+    background-color: #4f4444
+    
+}
+
+.head .navbar-nav > .active > a:hover, .head .navbar-nav > li > a:hover,.head .navbar-nav > .open > a:focus {
+    color: #F4F4F4;
+    background-color: #999;
+    font-weight: 800;
+}
+
+.head .dropdown-menu {
+    background-color: #5C8004;
+    color: #F4F4F4;
+}    
+
+.head .dropdown-header {
+    
+    font-size: 18px;
+ 
+    color: #F4F4F4;
+    border-bottom: #59FF00 dashed 1px;
+    
+
+
+}
+
+.head .dropdown-menu .divider {
+  
+    background-color: #59FF00;
+}
+
+
+.head .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    color: #4FFF00;
+    text-decoration: none;
+    background-color: #557605;
+}
+
+.head .dropdown-menu > li > a {
+     color: #F4F4F4;
+}
+
+.head.navbar{
+    margin-bottom:0;
+    z-index: 999;
+}
+
+.affix {
+     top: 0;
+}
+
+.top-app{
+  
+
+   background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url('/background/wallpaper01.jpg');
+   color:#fff;
+   
+   text-align: center;
+   height: 100vh;
+}
+
+.top-app .title-app {
+    margin-top:100px;
+    color: #4FFF00;
+}
+
+.container-wide {
+     margin-right: auto; 
+    margin-left: auto;
+}
+
+.mt-0{
+    margin-top:0;
+}
+
+.title-form {
+  text-align:center;
+}
+
+.h2-special {
+    font-size: 2em;
+}
+
+hr.light{
+ color:white;
+}
+
+hr.dark{
+    color: #313131;
+   }
+
+.text-white{
+    color:white;
+}
+
+.text-dark{
+    columns: #313131;;
+}
+
+
+.svg-inline--fa {
+    display: inline-block;
+    font-size: inherit;
+    height: 7em;
+    overflow: visible;
+    vertical-align: -.125em;
+}
+
+.page-section {
+    padding: 8rem 0;
+}
+
+hr.divider {
+    max-width: 3.25rem;
+    border-width: 0.2rem;
+    
+}
+
+.top-app p {
+    
+}
+
+.page-section{
+    padding: 8rem 0;
+}
+
+.bg-primary {
+    background-color: #f4623a !important;
+}
+
+.info-box{
+   
+  
+   border-radius: 8px;
+   border: 1px solid;
+   margin: 10px 0px;
+   padding:15px 10px;
+   color: #00529b;
+   background-color: #fff;
+   opacity: 0.8;
+   
+}
+
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+@media screen and (min-width: 640px) {
+
+.top-app h1 {
+ font-family: 'Lobster Two', cursive;
+ font-size:62px;
+}
+
+.top-app h3{
+    font-size:42px; 
+}
+
+.overlay {
+    padding:30px 40px;
+}
+
+.menu-overlay {
+    padding:30px 8px;
+    text-align:center;
+}
+
+}
+
+@media screen and (max-width: 639px) {
+    
+    .top-app h1 {
+     font-family: 'Lobster Two', cursive;
+     font-size:32px;
+    }
+    
+    .top-app h3{
+        font-size:20px; 
+    }
+    
+    }
+
+
+
+    
+    h1 {
+
+        line-height: 48px;
+        font-size: 36px;
+    
+    }
+
+    h2 {
+
+        line-height: 36px;
+        font-size: 24px;
+    
+    }
+
+    h3 {
+
+        line-height: 30px;
+        font-size: 21px;
+    
+    }
+
+    h4 {
+
+        line-height: 22px;
+        font-size: 18px;
+    
+    }
+    h5 {
+    
+        font-size: 14px;
+    
+    }
+
+    h6 {
+      font-size: 12px;
+    }
+
+    
+    h1, h2, h3, h4, h5, h6 {
+    
+        color: #313131;
+        font-family: Rubik,sans-serif;
+        margin: 10px 0;
+        font-weight: 300;
+    
+    }
+
+    .img-circle {
+
+        border-radius: 50%;
+    
+    }
+
+    .page {
+        margin-top:34vh;
+        margin-bottom:20vh;
+        padding:32px;
+        
+  
+    }
+
+    .bg-wallpaper {
+        background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url('/background/bg-masthead.jpg');
+ 
+
+    }
+
+    .menu-text {
+        text-align: center;
+    }
+
+    .menu-icon {
+        text-align: center;
+    }
+
+    .footer {
+        background-color: #313131;
+        margin-top:0px;
+        padding: 32px 40px;
+        min-height: 60px;
+        color:#fff;
+    }
+
+    .navbar-admin {
+        background-color: #313131;
+        
+    }

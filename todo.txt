@@ -1,0 +1,4 @@
+07072018
+1. add cart 
+2. pindah fungsi display product
+3. payment module using bank transfer and COD
