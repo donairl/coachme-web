@@ -44,8 +44,8 @@ class MaProduct extends \yii\db\ActiveRecord
             [['price_unit'], 'number'],
             [['dept_id'], 'integer'],
             [['product_name'], 'string', 'max' => 40],
-            [['short_description'], 'string', 'max' => 80],
-            [['note'], 'string'],
+            [['short_description'], 'string', 'max' => 200],
+            [['note','embed_url'], 'string'],
             [['unit'], 'string', 'max' => 12],
             [['picture'], 'string', 'max' => 60],
             [['category_id'], 'string', 'max' => 2],
@@ -60,13 +60,14 @@ class MaProduct extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'product_name' => Yii::t('app', 'Product/Service Name'),
+            'product_name' => Yii::t('app', 'Video Name'),
             'note' => Yii::t('app', 'Note'),
-            'unit' => Yii::t('app', 'Unit'),
-            'price_unit' => Yii::t('app', 'Price Unit'),
-            'picture' => Yii::t('app', 'Picture'),
-            'category_id' => Yii::t('app', 'Category ID'),
+            'unit' => Yii::t('app', 'Minutes'),
+            'price_unit' => Yii::t('app', 'Price'),
+            'picture' => Yii::t('app', 'Thumbnail'),
+            'category_id' => Yii::t('app', 'Kategori ID'),
             'cat_name' => Yii::t('app', 'Kategori'),
+            'embed_url'=>  Yii::t('app', 'Embed Url'),
         ];
     }
 

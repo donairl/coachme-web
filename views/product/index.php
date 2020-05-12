@@ -10,7 +10,7 @@ use yii\helpers\Url;
 /* @var $searchModel app\models\MaProductSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Services');
+$this->title = Yii::t('app', 'Video');
 $this->params['breadcrumbs'][] = $this->title;
 
 $dataList=ArrayHelper::map(MaDepartment::find()->asArray()->all(), 'id', 'name');
@@ -20,7 +20,7 @@ $dataList=ArrayHelper::map(MaDepartment::find()->asArray()->all(), 'id', 'name')
     
     <h1><?= Html::encode($this->title) ?></h1>
     <hr>
-    <h3><?=Yii::t('app', 'Bidang Departemen')?>
+    <h3><?=Yii::t('app', 'Kategori')?>
     <?= Html::dropDownList('dept_id', null, $dataList,['id'=>'dept_id', 'prompt'=>Yii::t('app','Silahkan Pilih...'),'options'=> [$searchModel->dept_id => ['selected'=>true]]]) ?>
     </h3>
     <hr>

@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
                      </div>
                     
                      <div class="col-lg-4 col-sm-12">
-                     <?= Html::a('<span class="glyphicon glyphicon-wrench"></span> Kategori', ['department/index'], ['class' => 'btn-lg btn-primary']) ?>
+                     <?= Html::a('<span class="glyphicon glyphicon-wrench"></span> Kategori', ['topcat/index'], ['class' => 'btn-lg btn-primary']) ?>
                      </div>
 
                     </div> 
@@ -51,6 +51,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     
                      <div class="col-lg-4">
                      <?= Html::a('<span class="glyphicon glyphicon-heart"></span> Maintenance Data', ['users/profile'], ['class' => 'btn-lg btn-primary']) ?>
+                
                      </div>
                     </div> 
 

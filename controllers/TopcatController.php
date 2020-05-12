@@ -11,8 +11,10 @@ use yii\filters\VerbFilter;
 
 /**
  * DepartmentController implements the CRUD actions for MaDepartment model.
+ * History
+ * in coach me rename to top category
  */
-class DepartmentController extends Controller
+class TopcatController extends Controller
 {
     public $layout='admin';
     
