@@ -39,7 +39,7 @@ class MaProduct extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['product_name', 'note', 'unit', 'price_unit', 'picture', 'category_id'], 'required'],
+            [['product_name', 'note', 'unit', 'price_unit', 'category_id'], 'required'],
             [['attachment1'], 'file','extensions' => 'jpg, png', 'mimeTypes' => 'image/jpeg, image/png',],
             [['price_unit'], 'number'],
             [['dept_id'], 'integer'],

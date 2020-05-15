@@ -113,6 +113,9 @@ class ProductController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
+            
+            Yii::trace($model->getErrors());
+
             return $this->render('create', [
                 'model' => $model,
             ]);

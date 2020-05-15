@@ -27,7 +27,7 @@ $dataList=ArrayHelper::map(MaDepartment::find()->asArray()->all(), 'id', 'name')
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a(Yii::t('app', 'New Service'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Video Baru'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 <?php Pjax::begin(); ?>    
 <?= GridView::widget([

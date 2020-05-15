@@ -25,13 +25,13 @@ $list=ArrayHelper::map(MaCategory::find()->where(['dept_id'=>$session['dept_id']
     <?= $form->field($model, 'product_name')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'short_description')->textInput(['maxlength' => true]) ?>
-
+    <?= $form->field($model, 'embed_url')->textInput(['maxlength' => true]) ?>
     <?= $form->field($model, 'unit')->textInput(['maxlength' => true]) ?>
-
     <?= $form->field($model, 'price_unit')->textInput(['maxlength' => true]) ?>
 
     <?//= $form->field($model, 'picture')->textInput(['maxlength' => true]) 
      if (!$model->isNewRecord) {
+    
     ?>
         <div class="form-group">
             <img src="<?=Url::to('@web/product/'.$model->picture)?>">   
