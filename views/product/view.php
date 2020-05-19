@@ -32,18 +32,23 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
+            'category_id',
             'product_name',
             'note:html',
             'unit',
             'price_unit',
             'picture',
-            'category_id',
+          
         ],
     ]) ?>
+    <!--
     <hr>
     <h2>Sub Item</h2>
     <hr>
-    <?= GridView::widget([
+    -->
+    <?
+    /*
+    GridView::widget([
         'dataProvider' => $dpchild,
       
         'columns' => [
@@ -55,5 +60,6 @@ $this->params['breadcrumbs'][] = $this->title;
           
         ],
     ]);
+    */
     ?>
 </div>

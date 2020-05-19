@@ -5,8 +5,8 @@
 
 use yii\helpers\Html;
 use yii\helpers\Url;
-use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
+use yii\bootstrap4\Nav;
+use yii\bootstrap4\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\ThemeAsset;
 use app\models\MaCategory;
@@ -30,95 +30,36 @@ ThemeAsset::register($this);
 
 <body>
 <?php $this->beginBody() ?>
-<nav class="head navbar navbar-default " data-spy="affix" data-offset-top="520">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-            aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#"><?=Yii::$app->name?></a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active">
-              <a href="<?=Url::home()?>">Home</a>
-            </li>
-            <?php
-            if (!\Yii::$app->user->isGuest && \Yii::$app->user->identity->role==1) {
-              echo  '<li><a href="'.Url::to(['admin/index']).'">Admin Menu</a></li>';
-            }
-           ?>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                  Category
-                  <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu">
-                <? 
-                $mcategory=MaCategory::find()->orderBy('category_name')->all();
-
-               // if (!$mcategory) 
-                foreach($mcategory as $r){ 
-                     $xurl=Url::to(['site/product','catid'=>$r->category_code]);
-                 ?>
-                  <li>
-                    
-                    <a href="#" data-url="<?=$xurl?>" class="cat-list"><?=$r->category_name?>&nbsp;<span class="badge"><?=$r->countproduct?></span></a>
-                  </li>
-                <? } ?>
-                </ul>
-              </li>
-              <li>
-                <a href="<?=Url::to(['site/contact'])?>">Contact</a>
-              </li>
-              <li>
-                <a href="<?=Url::to(['site/about'])?>">About</a>
-              </li>
-            
-            <?php if (Yii::$app->user->isGuest){  ?>
-              <li>
-                <a href="<?=Url::to(['users/login'])?>">Login</a>
-                
-              </li>
-              <li>
-                <a href="<?=Url::to(['users/register'])?>">Register</a>
-              </li>
-            <?php } else { ?>
-
-              <li>
-                <a href="<?=Url::to(['product/viewcart'])?>">My Cart</a>
-              </li> 
-              <li>
-                <a href="<?=Url::to(['users/logout'])?>">Logout (<?=Yii::$app->user->identity->username?>)</a>
-              </li>
-
-            <?php } ?>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-
-            <li></li>
-          </ul>
-        </div>
-        <!--/.nav-collapse -->
-      </div>
-    </nav>
+<? //!\Yii::$app->user->isGuest && \Yii::$app->user->identity->role==1 ?>
+<?
+NavBar::begin(['brandLabel' => 'Coach Me','options'=>['class'=>'navbar-expand-lg navbar-dark bg-dark']]);
+echo Nav::widget([
+    'items' => [
+        ['label' => 'Home', 'url' => ['/site/index']],
+        ['label' => 'Login', 'url' => ['/site/index']],
+        ['label' => 'Register', 'url' => ['/site/index']],
+        ['label' => 'About', 'url' => ['/site/about']],
+    ],
+    'options' => ['class' => 'navbar-nav'],
+]);
+NavBar::end();
+?>
+<? if ( Yii::$app->controller->id == 'site' && Yii::$app->controller->action->id == 'index') { ?>    
 <div class="container-fluid top-app">
   <h1 class="title-app"><?=Yii::$app->params['title-app']?></h1>
   <h3 class="title-app"><?=Yii::$app->params['subtitle-app']?></h3>
   <p><?=Yii::$app->params['description-app']?></p>
 
 </div>
+<? }  ?>
 
 
-
-<div class="container-wide">
-      <?=$content ?>
+<div class="container-fluid p-0">
+    <?=$content ?>
 </div>
-    
+
+
+   
     <!--stop -->
     <footer class="footer">
       <div class="container">

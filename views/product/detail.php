@@ -7,8 +7,8 @@ use yii\helpers\Url;
 /* @var $this yii\web\View */
 /* @var $model app\models\MaProduct */
 
-$this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Ma Products'), 'url' => ['index']];
+$this->title = $model->short_description;
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Video'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="ma-product-view white-box page">
@@ -21,14 +21,18 @@ $this->params['breadcrumbs'][] = $this->title;
 <p>
 
 <div class="row">
-<div class="col-lg-8 col-md-8">
+<div class="col-lg-12">
+<div class="video-section">
 <?=$model->embed_url;?>
-
+</div>
 <!--
 <img src="<?//=Url::to('@web/product/'.$model->picture)?>">
 -->
 </div>
-<div class="col-lg-4 col-md-4">
+</div>
+
+<div class="row">
+<div class="col-lg-12">
 <p>
 <?
 echo $model->note;
@@ -60,3 +64,28 @@ echo $model->note;
 <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>&nbsp;Beli</button> </p>
     -->
 </div>
+<?php
+$css=
+<<<CSS
+
+@media screen and (min-width: 1024px) {
+.ma-product-view {
+    
+        margin-left: 8%;
+        margin-right: 8%;
+  
+}
+
+.video-section {
+  width: 50%;
+  margin: 0 auto;
+  background-color:black;
+}
+
+}
+
+CSS;
+
+$this->registerCss($css);
+
+?>
