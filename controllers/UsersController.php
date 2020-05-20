@@ -67,6 +67,7 @@ class UsersController extends Controller
     public function actionCreate()
     {
         $model = new MaUsers();
+        $this->layout="admin";
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);

@@ -13,11 +13,11 @@ $this->title = 'Admin Menu';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
-<div class="site-admin page">
+<div class="site-admin page w-75 mx-auto">
     <div class="row">
 
             <div class="col-lg-11 info-box">
-                 <h2 class="title-info">
+                 <h2 class="title-info mx-auto">
                         <?= Html::encode($this->title) ?>
                         <hr>
                     </h2>
@@ -26,14 +26,14 @@ $this->params['breadcrumbs'][] = $this->title;
                    
                     <div class="row">
                      <div class="col-lg-4 col-sm-12">
-                     <?= Html::a('<span class="glyphicon glyphicon-user"></span> User', ['users/index'], ['class' => 'btn-lg btn-primary']) ?>
+                     <?= Html::a('<i class="fas fa-user-tie"></i> User', ['users/index'], ['class' => 'btn-lg btn-primary']) ?>
                      </div>
                      <div class="col-lg-4 col-sm-12">
-                     <?= Html::a('<span class="glyphicon glyphicon-tags"></span> Video Content', ['product/index'], ['class' => 'btn-lg btn-primary']) ?>
+                     <?= Html::a('<i class="fas fa-film"></i> Video Content', ['product/index'], ['class' => 'btn-lg btn-primary']) ?>
                      </div>
                     
                      <div class="col-lg-4 col-sm-12">
-                     <?= Html::a('<span class="glyphicon glyphicon-wrench"></span> Kategori', ['topcat/index'], ['class' => 'btn-lg btn-primary']) ?>
+                     <?= Html::a('<i class="fas fa-paperclip"></i> Kategori', ['topcat/index'], ['class' => 'btn-lg btn-primary']) ?>
                      </div>
 
                     </div> 
@@ -43,14 +43,14 @@ $this->params['breadcrumbs'][] = $this->title;
                     
                     <div class="row">
                      <div class="col-lg-4">
-                     <?= Html::a('<span class="glyphicon glyphicon-user"></span> Sub Kategori', ['category/index'], ['class' => 'btn-lg btn-primary']) ?>
+                     <?= Html::a('<i class="fas fa-tasks"></i> Sub Kategori', ['category/index'], ['class' => 'btn-lg btn-primary']) ?>
                      </div>
                      <div class="col-lg-4">
-                     <?= Html::a('<span class="glyphicon glyphicon-tags"></span> Payment', ['product/index'], ['class' => 'btn-lg btn-primary']) ?>
+                     <?= Html::a('<i class="fas fa-tools"></i> Other Setup', ['product/index'], ['class' => 'btn-lg btn-primary']) ?>
                      </div>
                     
                      <div class="col-lg-4">
-                     <?= Html::a('<span class="glyphicon glyphicon-heart"></span> Maintenance Data', ['users/profile'], ['class' => 'btn-lg btn-primary']) ?>
+                     <?= Html::a('<i class="fas fa-inbox"></i> Profile', ['users/profile'], ['class' => 'btn-lg btn-primary']) ?>
                 
                      </div>
                     </div> 
@@ -73,6 +73,8 @@ $css= <<<CSS
   background-image:  url("$url");
   background-repeat:  repeat;
 }
+
+
 CSS;
 
 $this->registerCss($css);

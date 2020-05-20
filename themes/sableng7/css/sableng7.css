@@ -36,6 +36,7 @@ body {
 .white-box{
     background-color: #fff;
     border: #232330 1px solid;
+    border-radius: 4px;
 }
 
 .head .navbar-brand {
@@ -122,9 +123,6 @@ body {
     margin-left: auto;
 }
 
-.mt-0{
-    margin-top:0;
-}
 
 .title-form {
   text-align:center;
@@ -295,11 +293,9 @@ p {
     }
 
     .page {
-        margin-top:34vh;
-        margin-bottom:20vh;
+     
         padding:32px;
-        
-  
+   
     }
 
     .bg-wallpaper {

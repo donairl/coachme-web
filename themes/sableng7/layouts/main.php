@@ -30,16 +30,26 @@ ThemeAsset::register($this);
 
 <body>
 <?php $this->beginBody() ?>
-<? //!\Yii::$app->user->isGuest && \Yii::$app->user->identity->role==1 ?>
-<?
+<? 
+ $mnuNormal =[
+  ['label' => 'Home', 'url' => ['/site/index']],
+  ['label' => 'Login', 'url' => ['/site/index']],
+  ['label' => 'Register', 'url' => ['/site/index']],
+  ['label' => 'About', 'url' => ['/site/about']],
+ ];
+ 
+ 
+ if (!\Yii::$app->user->isGuest && \Yii::$app->user->identity->role==1){ 
+    
+      $menuAdm= [['label' => 'Admin', 'url' => ['/adminsite/index']]];
+      $mnuNormal = array_merge($mnuNormal,$menuAdm); 
+ }
+
+
 NavBar::begin(['brandLabel' => 'Coach Me','options'=>['class'=>'navbar-expand-lg navbar-dark bg-dark']]);
 echo Nav::widget([
-    'items' => [
-        ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'Login', 'url' => ['/site/index']],
-        ['label' => 'Register', 'url' => ['/site/index']],
-        ['label' => 'About', 'url' => ['/site/about']],
-    ],
+    'items' => $mnuNormal
+    ,
     'options' => ['class' => 'navbar-nav'],
 ]);
 NavBar::end();

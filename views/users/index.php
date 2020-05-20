@@ -10,7 +10,8 @@ use yii\widgets\Pjax;
 $this->title = Yii::t('app', 'User Management');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="ma-users-index white-box page">
+<div class="ma-users-index site-login page pt-4">
+<div class=" white-box w-75 mx-auto page">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -38,4 +39,6 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
-<?php Pjax::end(); ?></div>
+<?php Pjax::end(); ?>
+</div>
+</div>

@@ -1,7 +1,7 @@
 <?php
 
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
+use yii\bootstrap4\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\RegisterForm */
@@ -12,11 +12,24 @@ $listBank=['bca'=>'BCA - Bank Central Asia',
       'bni'=>'BNI - Bank Nasional Indonesia',
       'mandiri'=>'Bank Mandiri','cimb'=>'CIMB'];
 ?>
-<div class="users-register">
-<div class="panel panel-default">
-<div class="panel-heading"><h4>Register</h4></div>
-  <div class="panel-body">
-    <?php $form = ActiveForm::begin(); ?>
+<div class="users-register mx-auto py-5" style="width: 720px;">
+<div class="card">
+
+<div class="card-body">
+  <div class="card-title"><h2>Register</h2></div>
+    <?php $form = ActiveForm::begin([
+              'layout' => 'horizontal',
+              'fieldConfig' => [
+                  'template' => "{label}\n{beginWrapper}\n{input}\n{hint}\n{error}\n{endWrapper}",
+                  'horizontalCssClasses' => [
+                      'label' => 'col-sm-4',
+                      'offset' => 'offset-sm-4',
+                      'wrapper' => 'col-sm-8',
+                      'error' => '',
+                      'hint' => '',
+                  ],
+              ],
+          ]); ?>
 
         <?= $form->field($model, 'username') ?>
         <?= $form->field($model, 'password')->passwordInput() ?>
