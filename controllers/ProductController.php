@@ -114,7 +114,7 @@ class ProductController extends Controller
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             
-            Yii::trace($model->getErrors());
+            //Yii::trace($model->getErrors());
 
             return $this->render('create', [
                 'model' => $model,

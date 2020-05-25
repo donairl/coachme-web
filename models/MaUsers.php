@@ -21,6 +21,8 @@ use yii\behaviors\TimestampBehavior;
  */
 class MaUsers extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
 {
+    public $plain_password;
+    public $repeat_password;
     /**
      * @inheritdoc
      */
@@ -37,7 +39,7 @@ class MaUsers extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
         return [
             [['username', 'email'], 'required'],
             [['role', 'status', 'created_at', 'updated_at'], 'integer'],
-            [['username', 'password_hash', 'password_reset_token', 'email'], 'string', 'max' => 255],
+            [['username', 'password_hash', 'password_reset_token', 'email','plain_password','repeat_password'], 'string', 'max' => 255],
             [['auth_key'], 'string', 'max' => 32],
             [[ 'created_at', 'updated_at'],'safe']
         ];

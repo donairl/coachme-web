@@ -10,6 +10,7 @@ $this->title = Yii::t('app', 'Buat Video');
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Ma Products'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<div class="site-admin page w-75 mx-auto" style="min-height:680px">
 <div class="ma-product-create white-box page">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -18,4 +19,5 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
     ]) ?>
 
+</div>
 </div>

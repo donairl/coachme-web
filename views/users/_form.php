@@ -34,7 +34,7 @@ use yii\bootstrap4\ActiveForm;
 
     <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'role')->dropdownlist(['1'=>'Admin','2'=>'Contributor']) ?>
+    <?= $form->field($model, 'role')->dropdownlist(['1'=>'Admin','2'=>'Normal']) ?>
     <?= $form->field($model, 'status')->dropdownlist(['1'=>'Active','0'=>'Inactived']) ?>
 
   

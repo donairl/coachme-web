@@ -21,6 +21,8 @@ ThemeAsset::register($this);
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+   
     <?= Html::csrfMetaTags() ?>
       <title>
         <?= Html::encode($this->title) ?>
@@ -33,18 +35,26 @@ ThemeAsset::register($this);
 <? 
  $mnuNormal =[
   ['label' => 'Home', 'url' => ['/site/index']],
-  ['label' => 'Login', 'url' => ['/site/index']],
-  ['label' => 'Register', 'url' => ['/site/index']],
+  ['label' => 'Register', 'url' => ['/users/register']],
   ['label' => 'About', 'url' => ['/site/about']],
  ];
  
  
  if (!\Yii::$app->user->isGuest && \Yii::$app->user->identity->role==1){ 
     
-      $menuAdm= [['label' => 'Admin', 'url' => ['/adminsite/index']]];
+      $menuAdm= [['label' => 'Admin', 'url' => ['/admin/index']]];
       $mnuNormal = array_merge($mnuNormal,$menuAdm); 
  }
 
+ if (\Yii::$app->user->isGuest){ 
+    
+  $menuAdd= [['label' => 'Login', 'url' => ['/users/login']]];
+  $mnuNormal = array_merge($mnuNormal,$menuAdd); 
+} else {
+  $menuAdd= [['label' => 'Logout ('. Yii::$app->user->identity->username.')', 'url' => ['/users/logout']]];
+  $mnuNormal = array_merge($mnuNormal,$menuAdd); 
+
+}
 
 NavBar::begin(['brandLabel' => 'Coach Me','options'=>['class'=>'navbar-expand-lg navbar-dark bg-dark']]);
 echo Nav::widget([

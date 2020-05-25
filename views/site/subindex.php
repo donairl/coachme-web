@@ -20,7 +20,7 @@ $this->title = 'Sableng7 Theme';
           <? foreach($model as $r){ 
           $xurl=Url::to(['site/product','catid'=>$r->category_code]);?>
           <a href="#" data-url="<?=$xurl?>" data-name="<?=$r->category_name?>" class="list-group-item cat-list">
-            <?=$r->category_name?><span class="badge">
+            <?=$r->category_name?>&nbsp;&nbsp;<span class="badge badge-info">
               <?=$r->countproduct?></span></a>
           <? } ?>
 

@@ -179,4 +179,15 @@ class UsersController extends Controller
         
     }
 
+    public function actionProfile()
+    {
+        $model = $this->findModel(Yii::$app->user->identity->id);
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            //return $this->redirect(['view', 'id' => $model->id]);
+        }
+
+        return $this->render('profile',['model'=>$model]);
+    }
+
 }

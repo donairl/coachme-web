@@ -17,24 +17,25 @@ if (count($model)<1){
 foreach($model as $r){
 ?>
 <div class="col-lg-4">
-    <div class="col-prd">
+    <div class="col-prd" style="height:540px">
         <p class="title"><?=$r->product_name?></p>
         <a href="<?=Url::to(['product/detail','id'=>$r->id])?>">
          <? if ($r->picture!='') { ?>
         
             <img src="<?=Url::to('@web/product/'.$r->picture)?>">
          <? } else { ?>
-            <img src="<?=Url::to('@web/product/play.jpg')?>">
-            <i class="far fa-play-circle"></i>
+             <img src="<?=Url::to('@web/product/play.jpg')?>">
+           
         <? } ?>
         </a>
-        <p class="desc"><?=$r->short_description?></p>
+        <p class="desc"><?=$r->short_description?>  </p>
         <p class="price">Rp <?=number_format($r->price_unit,2)?>/<?=$r->unit?></p>
         <!--
         <p class="buy-section"><button class="btn btn-danger buythis"
                 data-prdid="<?=$buy_url=Url::to(['product/addtocart','prdid'=>$r->id]);?>">
                 <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>&nbsp;View</button> </p>
-        -->        
+        -->          
+       <p class="mb-1"><i class="far fa-play-circle" style="font-size:24px"></i></p>
     </div>
 
 </div>

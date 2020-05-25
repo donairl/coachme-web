@@ -66,7 +66,7 @@ class MaProduct extends \yii\db\ActiveRecord
             'price_unit' => Yii::t('app', 'Price'),
             'picture' => Yii::t('app', 'Thumbnail'),
             'category_id' => Yii::t('app', 'Kategori ID'),
-            'cat_name' => Yii::t('app', 'Kategori'),
+            'cat_name' => Yii::t('app', 'Kelas'),
             'embed_url'=>  Yii::t('app', 'Embed Url'),
         ];
     }

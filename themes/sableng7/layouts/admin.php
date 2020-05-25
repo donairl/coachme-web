@@ -47,9 +47,15 @@ ThemeAsset::register($this);
             ['label' => 'Contact', 'url' => ['/site/contact']],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/users/login']]
-            ) : (
-                '<li>'
-                . Html::beginForm(['/site/logout'], 'post')
+            ) :   ['label' => 'Logout', 'url' => ['/users/logout'],
+               'data' => [
+                'confirm' => Yii::t('app', 'Apa anda yakin logout'),
+                'method' => 'post',
+            ]]
+            /*
+            (
+                '<li class="nav-item">'
+                . Html::beginForm(['/users/logout'], 'post')
                 . Html::submitButton(
                     'Logout (' . Yii::$app->user->identity->username . ')',
                     ['class' => 'btn btn-link logout']
@@ -57,6 +63,7 @@ ThemeAsset::register($this);
                 . Html::endForm()
                 . '</li>'
             )
+            */
         ],
     ]);
     NavBar::end();

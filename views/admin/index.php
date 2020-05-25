@@ -13,7 +13,7 @@ $this->title = 'Admin Menu';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
-<div class="site-admin page w-75 mx-auto">
+<div class="site-admin page w-75 mx-auto" style="height:680px">
     <div class="row">
 
             <div class="col-lg-11 info-box">

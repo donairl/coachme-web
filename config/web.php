@@ -73,14 +73,16 @@ $config = [
             'bundles' => [
                 'yii\bootstrap4\BootstrapAsset' => [
                     'sourcePath' => null,
-                    'baseUrl' => 'https://stackpath.bootstrapcdn.com/bootstrap/4.2.1',
+                    //'baseUrl' => 'https://stackpath.bootstrapcdn.com/bootstrap/4.2.1',
+                    'baseUrl' => 'http://assets.test',
                     'css' => [
                         'css/bootstrap.min.css'
                     ],
                 ],
                 'yii\bootstrap4\BootstrapPluginAsset' => [
                     'sourcePath' => null,
-                    'baseUrl' => 'https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1',
+                    //'baseUrl' => 'https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1',
+                    'baseUrl' => 'http://assets.test',
                     'js' => [
                         'js/bootstrap.bundle.min.js'
                     ],

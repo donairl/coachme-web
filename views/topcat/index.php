@@ -7,7 +7,7 @@ use yii\widgets\Pjax;
 /* @var $searchModel app\models\MaDepartmentSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Kategori');
+$this->title = Yii::t('app', 'Kelas');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="ma-department-index page white-box">
