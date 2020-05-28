@@ -12,6 +12,7 @@ $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Categories'), 'url' 
 $this->params['breadcrumbs'][] = ['label' => $model->category_code, 'url' => ['view', 'id' => $model->category_code]];
 $this->params['breadcrumbs'][] = Yii::t('app', 'Update');
 ?>
+<div class="page w-75 mx-auto" style="min-height:680px">
 <div class="ma-category-update page white-box">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -20,4 +21,5 @@ $this->params['breadcrumbs'][] = Yii::t('app', 'Update');
         'model' => $model,
     ]) ?>
 
+</div>
 </div>

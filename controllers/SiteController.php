@@ -45,7 +45,7 @@ class SiteController extends Controller
 
     public function actionSubindex($id)
     {
-        $m=MaCategory::find()->where(['dept_id'=>$id])->orderBy('category_name')->all();
+        $m=MaCategory::find()->where(['dept_id'=>$id])->orderBy('category_code')->all();
         $txt=MaDepartment::findOne($id)->name;
         return $this->render('subindex',['model'=>$m,'deptname'=>$txt,'deptid'=>$id]);
     }

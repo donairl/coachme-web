@@ -16,7 +16,7 @@ $this->title = 'Sableng7 Theme';
                 frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
             <br>
-            <a class="btn btn-default" href="/users/register">Gabung Sekarang</a>
+            <a class="btn btn-dark" href="/users/register">Gabung Sekarang</a>
         </div>
     </div>
 

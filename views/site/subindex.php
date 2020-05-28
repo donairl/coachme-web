@@ -3,7 +3,7 @@
 /* @var $this yii\web\View */
 use yii\helpers\Url;
 
-$this->title = 'Sableng7 Theme';
+$this->title = 'Coach Me Video';
 ?>
 
 
@@ -44,7 +44,7 @@ $this->title = 'Sableng7 Theme';
             <div class="input-group">
               <input type="text" class="form-control" id="txtSearch" placeholder="Search for...">
               <span class="input-group-btn">
-                <button class="btn btn-default" type="button" id="btnGo">Go!</button>
+                <button class="btn btn-dark" type="button" id="btnGo">Go!</button>
               </span>
             </div><!-- /input-group -->
           </div>

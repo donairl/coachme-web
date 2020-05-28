@@ -11,13 +11,14 @@ $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Ma Categories'), 'ur
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
+<div class="page w-75 mx-auto" style="min-height:680px">
 <div class="ma-category-view page white-box">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
         <?= Html::a(Yii::t('app', 'Update'), ['update', 'id' => $model->category_code], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a(Yii::t('app', 'Back'), ['index'], ['class' => 'btn btn-default']) ?>
+        <?= Html::a(Yii::t('app', 'Back'), ['index'], ['class' => 'btn btn-dark']) ?>
         <?= Html::a(Yii::t('app', 'Delete'), ['delete', 'id' => $model->category_code], [
             'class' => 'btn btn-danger',
             'data' => [
@@ -36,4 +37,5 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]) ?>
 
+</div>
 </div>

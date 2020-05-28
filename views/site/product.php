@@ -70,7 +70,7 @@ $css=
 
 .col-prd .title{
     font-family: 'Lobster Two', cursive;
-    font-size:18px;
+    font-size:16px;
     text-align:center;
   
 }

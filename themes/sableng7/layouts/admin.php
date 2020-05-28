@@ -77,7 +77,7 @@ ThemeAsset::register($this);
 
         <footer class="footer">
             <div class="container p-0">
-                <p class="pull-left">&copy; Sableng9
+                <p class="pull-left">&copy; QSpot Studio
                     <?= date('Y') ?>
                 </p>
                 <p class="pull-right">

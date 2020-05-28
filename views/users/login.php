@@ -29,6 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <hr>
                 <?php $form = ActiveForm::begin([
         'id' => 'login-form',
+        'options'=>['class'=>'was-validated'],
         'layout' => 'horizontal',
         'fieldConfig' => [
             'template' => "{label}\n<div class=\"col-lg-10\">{input}</div>\n<div class=\"col-lg-12\">{error}</div>",
@@ -40,10 +41,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
                 <?= $form->field($model, 'password')->passwordInput() ?>
+                <?= $form->field($model, 'rememberMe')->checkbox();?>
 
-                <?= $form->field($model, 'rememberMe')->checkbox([
-            'template' => "<div class=\"col-lg-offset-1 col-lg-3\">{input} {label}</div>\n<div class=\"col-lg-8\">{error}</div>",
-        ]) ?>
+                <?
+                 /*= $form->field($model, 'rememberMe')->checkbox([
+                'template' => "<div class=\"col-lg-offset-1 col-lg-3\">{input} {label}</div>\n<div class=\"col-lg-8\">{error}</div>",
+               ])*/ ?>
 
                 <div class="col-lg-offset-1" style="color:#999;">
                     <?=Yii::t('app', 'Login username and password is case sensitive');?> <br>

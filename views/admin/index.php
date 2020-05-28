@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
                      </div>
                     
                      <div class="col-lg-4 col-sm-12">
-                     <?= Html::a('<i class="fas fa-paperclip"></i> Kategori', ['topcat/index'], ['class' => 'btn-lg btn-primary']) ?>
+                     <?= Html::a('<i class="fas fa-paperclip"></i> Kelas', ['topcat/index'], ['class' => 'btn-lg btn-primary']) ?>
                      </div>
 
                     </div> 

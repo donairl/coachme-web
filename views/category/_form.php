@@ -24,7 +24,7 @@ $list=ArrayHelper::map(MaDepartment::find()->asArray()->all(), 'id', 'name');
 
     <div class="form-group">
         <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>
-        <?= Html::a(Yii::t('app', 'Back'), ['index'], ['class' => 'btn btn-default']) ?>
+        <?= Html::a(Yii::t('app', 'Back'), ['index'], ['class' => 'btn btn-dark']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

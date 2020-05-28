@@ -43,12 +43,11 @@ $dataList=ArrayHelper::map(MaDepartment::find()->asArray()->all(), 'id', 'name')
             'product_name',
             'short_description',
             'unit',
-            'price_unit',
+           // 'price_unit',
+            ['class' => 'yii\grid\ActionColumn'],
             // 'picture',
             // 'category_id',
-
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
+         ],
     ]); ?>
 <?php Pjax::end(); ?>
 

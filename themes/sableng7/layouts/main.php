@@ -112,7 +112,7 @@ NavBar::end();
         </div>
         
 
-        <p class="text-center">&copy; Sableng9
+        <p class="text-center">&copy; QSpot Studio
           <?= date('Y') ?>
         </p>
 

@@ -11,6 +11,7 @@ $this->title = $model->short_description;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Video'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<div class="page w-lg-75 mx-auto" style="min-height:680px">
 <div class="ma-product-view white-box page">
 
 <div class="row col-lg-12 title-form">
@@ -23,7 +24,9 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="row">
 <div class="col-lg-12">
 <div class="video-section">
-<?=$model->embed_url;?>
+<iframe src="https://www.youtube.com/embed/<?=$model->embed_url;?>" 
+frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen="" class="col-sm-12"></iframe>
 </div>
 <!--
 <img src="<?//=Url::to('@web/product/'.$model->picture)?>">
@@ -64,6 +67,7 @@ echo $model->note;
 <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>&nbsp;Beli</button> </p>
     -->
 </div>
+</div>
 <?php
 $css=
 <<<CSS
@@ -71,16 +75,23 @@ $css=
 @media screen and (min-width: 1024px) {
 .ma-product-view {
     
-        margin-left: 8%;
-        margin-right: 8%;
+        margin-left: 4%;
+        margin-right: 4%;
   
 }
 
 .video-section {
-  width: 50%;
+  width: 70%;
   margin: 0 auto;
   background-color:black;
 }
+
+.video-section iframe {
+  height: 42vw;
+  margin: 0 auto;
+  background-color:black;
+}
+
 
 }
 

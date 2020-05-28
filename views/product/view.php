@@ -26,7 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'method' => 'post',
             ],
         ]) ?>
-          <?= Html::a(Yii::t('app', 'Kembali'), ['index', 'dept_id' => 1], ['class' => 'btn btn-default']) ?>
+          <?= Html::a(Yii::t('app', 'Kembali'), ['index', 'dept_id' => 1], ['class' => 'btn btn-dark']) ?>
     </p>
 
     <?= DetailView::widget([
