@@ -6,11 +6,12 @@ use yii\bootstrap4\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model app\models\RegisterForm */
 /* @var $form ActiveForm */
-
+/*
 $listBank=['bca'=>'BCA - Bank Central Asia',
       'bri'=>'BRI - Bank Rakyat Indonesia',
       'bni'=>'BNI - Bank Nasional Indonesia',
       'mandiri'=>'Bank Mandiri','cimb'=>'CIMB'];
+*/      
 ?>
 <div class="users-register mx-auto py-5" style="width: 720px;">
 <div class="card">
@@ -36,11 +37,16 @@ $listBank=['bca'=>'BCA - Bank Central Asia',
         <?= $form->field($model, 'retype_password')->passwordInput() ?>
         <?= $form->field($model, 'real_name') ?>
         <?= $form->field($model, 'email') ?>
-        <?= $form->field($model, 'sex')->radioList ( ['M'=>Yii::t('app','Pria'),'F'=>Yii::t('app','Wanita')] ) ?>
-        <?= $form->field($model, 'bank')->dropDownList($listBank, 
-						['prompt'=>'Select...']); ?>
-        <?= $form->field($model, 'bank_account_no') ?>
-        <?= $form->field($model, 'bank_account_name') ?>
+        <?= $form->field($model, 'phone_no') ?>
+        <div class="form-group">
+           <p> * Harap masukkan email dan no handphone yang benar, karena sistem akan menverifikasi untuk mengaktivasi account yang terdaftar</p>
+        </div>
+        
+        <?//= $form->field($model, 'sex')->radioList ( ['M'=>Yii::t('app','Pria'),'F'=>Yii::t('app','Wanita')] ) ?>
+        <?//= $form->field($model, 'bank')->dropDownList($listBank, 
+			//['prompt'=>'Select...']); ?>
+        <?//= $form->field($model, 'bank_account_no') ?>
+        <?//= $form->field($model, 'bank_account_name') ?>
     
         <div class="form-group">
             <?= Html::submitButton(Yii::t('app', 'Submit'), ['class' => 'btn btn-primary']) ?>

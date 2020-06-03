@@ -34,9 +34,7 @@ class MaUsersExtra extends \yii\db\ActiveRecord
             [[ 'username', 'bank_name', 'bank_acc_no', 'bank_acc_name'], 'required'],
             [['id'], 'integer'],
             [['username'], 'string', 'max' => 225],
-            [['bank_name'], 'string', 'max' => 22],
-            [['bank_acc_no'], 'string', 'max' => 32],
-            [['bank_acc_name'], 'string', 'max' => 100],
+            [['otp_activation'], 'string'],
             [['username'], 'exist', 'skipOnError' => true, 'targetClass' => MaUsers::className(), 'targetAttribute' => ['username' => 'username']],
         ];
     }

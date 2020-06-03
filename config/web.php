@@ -53,7 +53,7 @@ $config = [
             'translations' => [
                 'app' => [
              'class' => 'yii\i18n\GettextMessageSource',
-             'sourceLanguage' => 'en-US',
+             'sourceLanguage' => 'id-ID',
 
              'basePath' => '@app/messages'
                  ],

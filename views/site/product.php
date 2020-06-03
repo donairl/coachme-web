@@ -34,8 +34,8 @@ foreach($model as $r){
         <p class="buy-section"><button class="btn btn-danger buythis"
                 data-prdid="<?=$buy_url=Url::to(['product/addtocart','prdid'=>$r->id]);?>">
                 <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>&nbsp;View</button> </p>
-        -->          
-       <p class="mb-1"><i class="far fa-play-circle" style="font-size:24px"></i></p>
+          
+       <p class="mb-1"><i class="far fa-play-circle" style="font-size:24px"></i></p>     -->   
     </div>
 
 </div>
@@ -52,7 +52,7 @@ $css=
 .col-prd img {
   
 
-    width:200px;
+    width:320px;
     height:200px;
     margin-left:20px;
     border-radius:12px;

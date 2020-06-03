@@ -17,12 +17,13 @@ class RegisterForm extends Model
     public $bank;
     public $bank_account_no;
     public $bank_account_name;
+    public $phone_no;
 
     public function rules()
     {
         return [
             // username and password are both required
-            [['username', 'password','retype_password','bank','bank_account_no','bank_account_name','email'], 'required'],
+            [['username', 'password','retype_password','email','phone_no'], 'required'],
             [['real_name','sex'],'string'],
             ['retype_password','checksame'],
             ['email','email']
@@ -42,25 +43,32 @@ class RegisterForm extends Model
     public function register()
     {
         if ($this->validate()){
-        $m=new MaUsers();
-        $m->username=$this->username;
-        $m->setPassword($this->password);
-        $m->email=$this->email;
-        $m->role=2;
-        $m->created_at=date('U');
-        $a= $m->save();
+            $m=new MaUsers();
+            $m->username=$this->username;
+            $m->setPassword($this->password);
+            $m->email=$this->email;
+            $m->status=0; // not activated
+            $m->role=2;
+            $m->created_at=date('U');
+            $a= $m->save();
 
         if (!$a){
             Yii::trace($m->getErrors());
         }
 
         if ($a){
-        $mx=new MaUsersExtra();
-        $mx->username=$this->username;
-        $mx->bank_name=$this->bank;
-        $mx->bank_acc_no=$this->bank_account_no;
-        $mx->bank_acc_name=$this->bank_account_name;
-        $b=$mx->save();
+            $mx=new MaUsersExtra();
+            $mx->username=$this->username;
+            $mx->phone_no = $this->phone_no;
+            $mx->otp_activation = rand(1000,9999);
+            $b=$mx->save();
+            
+            Yii::$app->mailer->compose('activation',['otp_code'=>$mx->otp_activation,'username'=>$this->username]) // a view rendering result becomes the message body here
+            ->setFrom(Yii::$app->params['adminEmail'])
+            ->setTo($this->email)
+            ->setSubject('[Coach-Me] Kode Aktivasi OTP')
+            ->send();
+
 
         }
 

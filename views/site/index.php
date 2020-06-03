@@ -12,7 +12,7 @@ $this->title = 'Sableng7 Theme';
             <h2 class="text-white mt-0 h2-special">Mulai sekarang juga</h2>
             <hr class="divider light my-4">
             <p class="text-white-50 mb-4">Minimalkan resiko bisnis anda</p>
-            <iframe width="853" height="480" src="https://www.youtube.com/embed/HPRURtORnis?autoplay=0&modestbranding=1"
+            <iframe width="853" height="480" src="https://www.youtube.com/embed/ea9dpmjqDzU?autoplay=0&modestbranding=1"
                 frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
             <br>
