@@ -11,7 +11,7 @@ $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Ma Categories'), 'ur
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<div class="page w-75 mx-auto" style="min-height:680px">
+
 <div class="ma-category-view page white-box">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -38,4 +38,4 @@ $this->params['breadcrumbs'][] = $this->title;
     ]) ?>
 
 </div>
-</div>
+
