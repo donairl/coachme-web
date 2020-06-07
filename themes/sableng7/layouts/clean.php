@@ -18,10 +18,7 @@ ThemeAsset::register($this);
         <meta charset="<?= Yii::$app->charset ?>">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-       
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-                
-                    
         <?= Html::csrfMetaTags() ?>
         <title>
             <?= Html::encode($this->title) ?>
@@ -74,36 +71,8 @@ ThemeAsset::register($this);
 
         <div class="container-fluid bg-wallpaper p-0">
             <div class="row">
-                <div class="col-2 side-menu">
-
-                    <div class="white-box">
-                        <div class="title-side">Navigasi</div>
-                        <ul class="nav">
-                            <li>
-                                <?= Html::a('<i class="fas fa-user-tie"></i> Dashboard', ['admin/index'], ['class' => '']) ?>
-                            </li>
-                            <li>
-                                <?= Html::a('<i class="fas fa-film"></i> Video Content', ['video/index'], ['class' => '']) ?>
-                            </li>
-                            <li>
-                                <?= Html::a('<i class="fas fa-user-tie"></i> User', ['users/index'], ['class' => '']) ?>
-                            </li>
-                            <li>
-                                <?= Html::a('<i class="fas fa-tasks"></i> Kategori', ['category/index'], ['class' => '']) ?>
-
-                            </li>
-                            <li>
-                                <?= Html::a('<i class="fas fa-paperclip"></i> Kelas', ['topcat/index'], ['class' => '']) ?>
-
-                            </li>
-                            <li>
-                                <?= Html::a('<i class="fas fa-inbox"></i> Profile', ['users/profile'], ['class' => '']) ?>
-
-                            </li>
-                       </ul>
-                    </div>
-                </div>
-                <div class="col-10">
+             
+                <div class="col-12">
                     <div class="page w-80 mx-auto" style="min-height:680px">
                         <?= $content ?>
                     </div>

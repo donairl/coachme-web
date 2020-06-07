@@ -12,7 +12,7 @@ use app\models\MaDepartment;
 $this->title = Yii::t('app', 'Sub Kategori');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="page w-75 mx-auto" style="min-height:680px">
+
 <div class="ma-category-index page white-box">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -42,4 +42,4 @@ $this->params['breadcrumbs'][] = $this->title;
     ]); ?>
     <?php Pjax::end(); ?>
 </div>
-    </div>
+

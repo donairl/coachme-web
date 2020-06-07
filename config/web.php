@@ -76,7 +76,7 @@ $config = [
                     //'baseUrl' => 'https://stackpath.bootstrapcdn.com/bootstrap/4.2.1',
                     'baseUrl' => 'http://assets.test',
                     'css' => [
-                        'css/bootstrap.min.css'
+                        'bootstrap/dist/css/bootstrap.min.css'
                     ],
                 ],
                 'yii\bootstrap4\BootstrapPluginAsset' => [
@@ -84,7 +84,7 @@ $config = [
                     //'baseUrl' => 'https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1',
                     'baseUrl' => 'http://assets.test',
                     'js' => [
-                        'js/bootstrap.bundle.min.js'
+                        'bootstrap/dist/js/bootstrap.bundle.min.js'
                     ],
                 ],
             ],

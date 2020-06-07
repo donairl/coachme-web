@@ -10,7 +10,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\RegisterForm;
-
+use yii\filters\AccessControl;
 /**
  * UsersController implements the CRUD actions for MaUsers model.
  */
@@ -27,6 +27,20 @@ class UsersController extends Controller
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'delete' => ['POST'],
+                ],
+            ],
+             'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['index'],
+                'rules' => [
+                   [
+                        'allow' => true,
+                        'actions' => ['index'],
+                        'roles' => ['@'],
+                        'matchCallback' => function ($rule, $action) {
+                            return Yii::$app->user->identity->role == 1;
+                        }
+                    ],
                 ],
             ],
         ];
@@ -140,7 +154,7 @@ class UsersController extends Controller
 
     public function actionLogin()
     {
-        $this->layout="admin";
+        $this->layout="clean";
 
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
@@ -169,6 +183,8 @@ class UsersController extends Controller
     
     public function actionRegister()
     {
+        $this->layout="clean";
+          
         $model = new RegisterForm();
         if ($model->load(Yii::$app->request->post()) && $model->register()) {
             return $this->goBack();

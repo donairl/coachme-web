@@ -16,7 +16,7 @@ use yii\data\ActiveDataProvider;
  * ProductController implements the CRUD actions for MaProduct model.
  * in coachme product become video product
  */
-class ProductController extends Controller
+class VideoController extends Controller
 {
     /**
      * @inheritdoc

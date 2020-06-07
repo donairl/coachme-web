@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
 $dataList=ArrayHelper::map(MaDepartment::find()->asArray()->all(), 'id', 'name');
 
 ?>
-<div class="site-admin page w-75 mx-auto" style="min-height:680px">
+
 <div class="ma-product-index white-box page">
     
     <h1><?= Html::encode($this->title) ?></h1>
@@ -52,7 +52,7 @@ $dataList=ArrayHelper::map(MaDepartment::find()->asArray()->all(), 'id', 'name')
 <?php Pjax::end(); ?>
 
 </div>
-</div>
+
 <?php
 
 $xurl= Url::to(['product/index']);
