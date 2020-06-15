@@ -24,7 +24,7 @@ $this->title = 'Sableng7 Theme';
 <div class="page white-box">
     <div class="row justify-content-center">
         <div class="col-lg-12 text-center">
-            <h2>Kelas</h2>
+            <h2>Kelas Kuliner</h2>
             <hr class="divider dark">
         </div>
     </div>

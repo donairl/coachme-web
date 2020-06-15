@@ -6,6 +6,7 @@ use yii\widgets\Pjax;
 use app\models\MaDepartment;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
+
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\MaProductSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -13,16 +14,15 @@ use yii\helpers\Url;
 $this->title = Yii::t('app', 'Video');
 $this->params['breadcrumbs'][] = $this->title;
 
-$dataList=ArrayHelper::map(MaDepartment::find()->asArray()->all(), 'id', 'name');
-
+$dataList = ArrayHelper::map(MaDepartment::find()->asArray()->all(), 'id', 'name');
 ?>
 
 <div class="ma-product-index white-box page">
-    
+
     <h1><?= Html::encode($this->title) ?></h1>
     <hr>
-    <h3><?=Yii::t('app', 'Kategori')?>
-    <?= Html::dropDownList('dept_id', null, $dataList,['id'=>'dept_id', 'prompt'=>Yii::t('app','Silahkan Pilih...'),'options'=> [$searchModel->dept_id => ['selected'=>true]]]) ?>
+    <h3><?= Yii::t('app', 'Kategori') ?>
+        <?= Html::dropDownList('dept_id', null, $dataList, ['id' => 'dept_id', 'prompt' => Yii::t('app', 'Silahkan Pilih...'), 'options' => [$searchModel->dept_id => ['selected' => true]]]) ?>
     </h3>
     <hr>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -30,33 +30,32 @@ $dataList=ArrayHelper::map(MaDepartment::find()->asArray()->all(), 'id', 'name')
     <p>
         <?= Html::a(Yii::t('app', 'Video Baru'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
-<?php Pjax::begin(); ?>    
-<?= GridView::widget([
+    <?php Pjax::begin(); ?>    
+    <?=
+    GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
             //'id',
-
             'cat_name',
             'product_name',
             'short_description',
             'unit',
-           // 'price_unit',
+            // 'price_unit',
             ['class' => 'yii\grid\ActionColumn'],
-            // 'picture',
-            // 'category_id',
-         ],
-    ]); ?>
-<?php Pjax::end(); ?>
+        // 'picture',
+        // 'category_id',
+        ],
+    ]);
+    ?>
+    <?php Pjax::end(); ?>
 
 </div>
 
 <?php
-
-$xurl= Url::to(['product/index']);
-$js=<<<JS
+$xurl = Url::to(['product/index']);
+$js = <<<JS
 
 $('#dept_id').change(
    ()=>{
@@ -72,6 +71,4 @@ $('#dept_id').change(
 JS;
 
 $this->registerJs($js);
-
-
 ?>

@@ -31,6 +31,8 @@ class MaDepartment extends \yii\db\ActiveRecord
         return [
             [['name', 'menuicon'], 'required'],
             [['name', 'menuicon'], 'string', 'max' => 50],
+            ['note','string'],
+            [['price'], 'number'],
         ];
     }
 
@@ -43,6 +45,7 @@ class MaDepartment extends \yii\db\ActiveRecord
             'id' => Yii::t('app', 'ID'),
             'name' => Yii::t('app', 'Name'),
             'menuicon' => Yii::t('app', 'Menuicon'),
+            'note' => Yii::t('app', 'Note'),
         ];
     }
 

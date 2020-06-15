@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 use yii\filters\AccessControl;
+use yii\data\ActiveDataProvider;
 
 class AdminController extends \yii\web\Controller {
 
@@ -40,8 +41,16 @@ public function behaviors()
         return $this->render('index');
     }
 
-    public function actionPurchaseorder() {
-        return $this->render('po');
+    public function actionListpo() {
+        $query = \app\models\Transaction::find();
+
+        
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+        ]);
+        
+        return $this->render('po',['dataProvider'=> $dataProvider]);
     }
 
 }

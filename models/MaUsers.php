@@ -101,6 +101,16 @@ class MaUsers extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     public function generateAuthKey() {
         $this->session_key = Yii::$app->security->generateRandomString();
     }
+    
+    public function getMaUsersExtra()
+    {
+        return $this->hasOne(MaUsersExtra::className(), ['username' => 'username']);
+    }
+    
+    public function getCurrentClassName()
+    {
+        return MaDepartment::findOne($this->getMaUsersExtra()->one()->current_class)->name;
+    }
 
     /**
      * @inheritdoc

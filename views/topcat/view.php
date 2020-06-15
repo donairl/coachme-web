@@ -37,6 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 // 'id',
                 'sort_no',
                 'name',
+                'note:html',
                 'menuicon',
             ],
         ])

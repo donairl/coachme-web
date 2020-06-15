@@ -371,7 +371,7 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 
-.menu-text {
+.menu-overlay .menu-text {
     text-align: center;
     position: absolute;
     min-width: 240px;
@@ -380,6 +380,17 @@ h1, h2, h3, h4, h5, h6 {
     background-color: white;
     opacity: 0.7;
 }
+
+.menu-overlay-buy .menu-text {
+    text-align: center;
+    position: absolute;
+    min-width: 240px;
+    top: 20%;
+    left: 18%;
+    background-color: white;
+    opacity: 0.7;
+}
+
 
 .menu-text h3{
 
@@ -405,6 +416,8 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #313131;
 
 }
+
+
 
 /* fix for bootstrap 4 glyphicon */
 

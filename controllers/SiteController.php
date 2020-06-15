@@ -39,10 +39,46 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $m=MaDepartment::find()->orderBy('name')->all();
+        $m=MaDepartment::find()->orderBy('sort_no')->all();
         return $this->render('index',['model'=>$m]);
     }
-
+    
+    public function actionPayment()
+    {
+        $m=MaDepartment::find()->orderBy('sort_no')->all();
+        return $this->render('payment',['model'=>$m]);
+    }
+    
+    public function actionPayment2nd($id)
+    {
+        $m=MaDepartment::findOne($id);
+        return $this->render('payment2nd',['model'=>$m]);
+    }
+    
+     public function actionPayfinal()
+    {
+        $payMethod = Yii::$app->request->post('paymethod'); 
+        $payForClass = Yii::$app->request->post('payForClass'); 
+        $m=MaDepartment::findOne($payForClass);
+        
+        $model = new \app\models\Transaction();
+        $model->invoice_no = Yii::$app->security->generateRandomString(6).'/'. date('mY');
+        $model->paid_for_class = $payForClass;
+        $model->username =  Yii::$app->user->identity->username;
+        $model->type_payment = $payMethod;
+        $model->status_payment = 0;
+        $model->total_paid = $m->price;
+        if (!$model->save()){
+            Yii::debug($model->username);
+            var_dump($model->getErrors());
+            die();
+        }
+        
+        return $this->renderAjax('payfinal',['model'=>$model,'kelasModel'=> $m]);
+    }
+    
+    
+    
     public function actionSubindex($id)
     {
         $m=MaCategory::find()->where(['dept_id'=>$id])->orderBy('category_code')->all();
@@ -100,7 +136,7 @@ class SiteController extends Controller
     public function actionBuyproduct($prdid='')
     {
         if (Yii::$app->user->isGuest) {
-            \Yii::$app->getSession()->setFlash('notif', 'Please login to purchase');
+            \Yii::$app->getSession()->setFlash('notif', 'Please login to view');
             return $this->redirect(['users/login']);
         }
 

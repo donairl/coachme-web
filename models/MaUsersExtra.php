@@ -32,7 +32,7 @@ class MaUsersExtra extends \yii\db\ActiveRecord
     {
         return [
             [[ 'username', 'bank_name', 'bank_acc_no', 'bank_acc_name'], 'required'],
-            [['id'], 'integer'],
+            [['id','current_class'], 'integer'],
             [['username'], 'string', 'max' => 225],
             [['otp_activation'], 'string'],
             [['username'], 'exist', 'skipOnError' => true, 'targetClass' => MaUsers::className(), 'targetAttribute' => ['username' => 'username']],
@@ -47,9 +47,7 @@ class MaUsersExtra extends \yii\db\ActiveRecord
         return [
             'id' => Yii::t('app', 'ID'),
             'username' => Yii::t('app', 'Username'),
-            'bank_name' => Yii::t('app', 'Bank Name'),
-            'bank_acc_no' => Yii::t('app', 'Bank Acc No'),
-            'bank_acc_name' => Yii::t('app', 'Bank Acc Name'),
+         
         ];
     }
 
