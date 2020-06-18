@@ -12,17 +12,18 @@ use app\models\LoginForm;
 use app\models\RegisterForm;
 use app\models\ActivationForm;
 use yii\filters\AccessControl;
+
 /**
  * UsersController implements the CRUD actions for MaUsers model.
  */
-class UsersController extends Controller
-{
-    public $layout='admin';
+class UsersController extends Controller {
+
+    public $layout = 'admin';
+
     /**
      * @inheritdoc
      */
-    public function behaviors()
-    {
+    public function behaviors() {
         return [
             'verbs' => [
                 'class' => VerbFilter::className(),
@@ -30,11 +31,11 @@ class UsersController extends Controller
                     'delete' => ['POST'],
                 ],
             ],
-             'access' => [
+            'access' => [
                 'class' => AccessControl::className(),
                 'only' => ['index'],
                 'rules' => [
-                   [
+                    [
                         'allow' => true,
                         'actions' => ['index'],
                         'roles' => ['@'],
@@ -51,14 +52,13 @@ class UsersController extends Controller
      * Lists all MaUsers models.
      * @return mixed
      */
-    public function actionIndex()
-    {
+    public function actionIndex() {
         $searchModel = new MaUsersSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+                    'searchModel' => $searchModel,
+                    'dataProvider' => $dataProvider,
         ]);
     }
 
@@ -67,10 +67,9 @@ class UsersController extends Controller
      * @param integer $id
      * @return mixed
      */
-    public function actionView($id)
-    {
+    public function actionView($id) {
         return $this->render('view', [
-            'model' => $this->findModel($id),
+                    'model' => $this->findModel($id),
         ]);
     }
 
@@ -79,16 +78,15 @@ class UsersController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
-    {
+    public function actionCreate() {
         $model = new MaUsers();
-        $this->layout="admin";
+        $this->layout = "admin";
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
-                'model' => $model,
+                        'model' => $model,
             ]);
         }
     }
@@ -99,15 +97,14 @@ class UsersController extends Controller
      * @param integer $id
      * @return mixed
      */
-    public function actionUpdate($id)
-    {
+    public function actionUpdate($id) {
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
-                'model' => $model,
+                        'model' => $model,
             ]);
         }
     }
@@ -118,8 +115,7 @@ class UsersController extends Controller
      * @param integer $id
      * @return mixed
      */
-    public function actionDelete($id)
-    {
+    public function actionDelete($id) {
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
@@ -132,30 +128,25 @@ class UsersController extends Controller
      * @return MaUsers the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id)
-    {
+    protected function findModel($id) {
         if (($model = MaUsers::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
-    
+
     //ini adalah reset password
-    public function actionResetdev()
-    {
-       $model = MaUsers::findOne(['username'=>'admin']);
-       $model->setPassword('asdf1234');
-       $model->save();
+    public function actionResetdev() {
+        $model = MaUsers::findOne(['username' => 'admin']);
+        $model->setPassword('asdf1234');
+        $model->save();
 
-       return 'OK';
+        return 'OK';
+    }
 
-
-    }   
-
-    public function actionLogin()
-    {
-        $this->layout="clean";
+    public function actionLogin() {
+        $this->layout = "clean";
 
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
@@ -166,50 +157,52 @@ class UsersController extends Controller
             return $this->redirect(['site/index']);
         }
         return $this->render('login', [
-            'model' => $model,
+                    'model' => $model,
         ]);
     }
-    
-     /**
+
+    /**
      * Logout action.
      *
      * @return Response
      */
-    public function actionLogout()
-    {
+    public function actionLogout() {
         Yii::$app->user->logout();
 
         return $this->goHome();
     }
-    
-    public function actionRegister()
-    {
-        $this->layout="clean";
-          
+
+    public function actionRegister() {
+        $this->layout = "clean";
+
         $model = new RegisterForm();
         if ($model->load(Yii::$app->request->post()) && $model->register()) {
-            return $this->redirect(['users/activation','uid'=>$model->username]);
+            return $this->redirect(['users/activation', 'uid' => $model->username]);
         }
         return $this->render('register', [
-            'model' => $model,
+                    'model' => $model,
         ]);
-        
     }
 
-    public function actionProfile()
-    {
+    public function actionProfile() {
         $model = $this->findModel(Yii::$app->user->identity->id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             //return $this->redirect(['view', 'id' => $model->id]);
         }
 
-        return $this->render('profile',['model'=>$model]);
+        return $this->render('profile', ['model' => $model]);
     }
 
     public function actionActivation($uid) {
-         $this->layout="clean";
-        $model= new ActivationForm();
-         return $this->render('activation',['model'=>$model]);   
+        $this->layout = "clean";
+        $model = new ActivationForm();
+        $model->username = $uid;
+         if ($model->load(Yii::$app->request->post()) && $model->activation()) {
+             Yii::$app->session->setFlash('notif','Aktivasi anda sukses,silahkan login');
+            return $this->redirect(['users/login']);
+        }
+        return $this->render('activation', ['model' => $model]);
     }
+
 }

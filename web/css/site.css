@@ -115,6 +115,4 @@ a.desc:after {
     outline: none;
 }
 
-.needs-validation .invalid-feedback {
-  display: block !important;   
-}        
+    
