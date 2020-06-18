@@ -271,7 +271,7 @@ p {
         padding:40px;
     }
     .top-app h1 {
-        font-family: 'Lobster Two', cursive;
+     
         font-size:62px;
     }
 
@@ -293,7 +293,7 @@ p {
 @media screen and (max-width: 639px) {
 
     .top-app h1 {
-        font-family: 'Lobster Two', cursive;
+        font-family: 'Roboto', cursive;
         font-size:32px;
     }
 
@@ -436,3 +436,7 @@ h1, h2, h3, h4, h5, h6 {
     content: "\f2ed";
     color: var(--danger);
 }
+
+.needs-validation .invalid-feedback {
+  display: block !important;   
+}    

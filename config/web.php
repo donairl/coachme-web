@@ -38,7 +38,17 @@ $config = [
             // send all mails to a file by default. You have to set
             // 'useFileTransport' to false and configure a transport
             // for the mailer to send real emails.
-            'useFileTransport' => true,
+            //'useFileTransport' => true,
+            'transport' => [
+                  'class' => 'Swift_SmtpTransport',
+                  'host' => 'mail.coachbisniskuliner.com',
+                  'username' => 'admin@coachbisniskuliner.com',
+                  'password' => 'EmailAdmin79',
+                  'port' => 465,
+                  'encryption' => 'ssl',
+              ],
+              'useFileTransport' => false,
+            
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
@@ -73,18 +83,18 @@ $config = [
             'bundles' => [
                 'yii\bootstrap4\BootstrapAsset' => [
                     'sourcePath' => null,
-                    //'baseUrl' => 'https://stackpath.bootstrapcdn.com/bootstrap/4.2.1',
-                    'baseUrl' => 'http://assets.test',
+                    'baseUrl' => 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css',
+                   // 'baseUrl' => 'http://assets.test',
                     'css' => [
-                        'bootstrap/dist/css/bootstrap.min.css'
+                        'bootstrap.min.css'
                     ],
                 ],
                 'yii\bootstrap4\BootstrapPluginAsset' => [
                     'sourcePath' => null,
-                    //'baseUrl' => 'https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1',
-                    'baseUrl' => 'http://assets.test',
+                    'baseUrl' => 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js',
+                    //'baseUrl' => 'http://assets.test',
                     'js' => [
-                        'bootstrap/dist/js/bootstrap.bundle.min.js'
+                        'bootstrap.bundle.min.js'
                     ],
                 ],
             ],
@@ -113,7 +123,7 @@ if (YII_ENV_DEV) {
     $config['modules']['debug'] = [
         'class' => 'yii\debug\Module',
         // uncomment the following to add your IP if you are not connecting from localhost.
-        'allowedIPs' => ['127.0.0.1', '::1'],
+        'allowedIPs' => ['140.0.63.156','127.0.0.1', '::1'],
     ];
 
     $config['bootstrap'][] = 'gii';

@@ -18,7 +18,7 @@ class ActivationForm extends Model
     {
         return [
             // username and password are both required
-            [['username', 'password','email','phone_no'], 'required'],
+            [['username', 'password','otp_code'], 'required'],
          
            
         ];

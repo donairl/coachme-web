@@ -3,7 +3,7 @@
 
 use yii\helpers\Url;
 
-$this->title = 'Sableng7 Theme';
+$this->title = 'Coach Bisnis Kuliner';
 ?>
 <section class="page-section bg-primary" id="about">
 

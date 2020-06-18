@@ -7,11 +7,7 @@ use yii\bootstrap4\ActiveForm;
 /* @var $model app\models\RegisterForm */
 /* @var $form ActiveForm */
 /*
-$listBank=['bca'=>'BCA - Bank Central Asia',
-      'bri'=>'BRI - Bank Rakyat Indonesia',
-      'bni'=>'BNI - Bank Nasional Indonesia',
-      'mandiri'=>'Bank Mandiri','cimb'=>'CIMB'];
-*/      
+*/
 ?>
 <div class="users-register mx-auto py-5" style="width: 720px;">
 <div class="card">
@@ -31,22 +27,12 @@ $listBank=['bca'=>'BCA - Bank Central Asia',
                   ],
               ],
           ]); ?>
-
-        <?= $form->field($model, 'username') ?>
-        <?= $form->field($model, 'password')->passwordInput() ?>
-        <?= $form->field($model, 'retype_password')->passwordInput() ?>
-        <?= $form->field($model, 'real_name') ?>
-        <?= $form->field($model, 'email') ?>
-        <?= $form->field($model, 'phone_no') ?>
-        <div class="form-group alert alert-danger" role="alert"">
-           *Harap masukkan email yang benar, karena sistem akan menverifikasi untuk mengaktivasi account yang terdaftar.
-        </div>
-        
-        <?//= $form->field($model, 'sex')->radioList ( ['M'=>Yii::t('app','Pria'),'F'=>Yii::t('app','Wanita')] ) ?>
-        <?//= $form->field($model, 'bank')->dropDownList($listBank, 
-			//['prompt'=>'Select...']); ?>
-        <?//= $form->field($model, 'bank_account_no') ?>
-        <?//= $form->field($model, 'bank_account_name') ?>
+      <?= $form->field($model, 'username')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'password')->passwordInput() ?>
+            <div class="form-group">
+                *E-Mail kode aktivasi telah terkirim, mohon cek email anda dan masukkan kodenya dibawah ini 
+            </div>     
+            <?= $form->field($model, 'otp_code')->textInput(['maxlength' => true]) ?>
     
         <div class="form-group">
             <?= Html::submitButton(Yii::t('app', 'Submit'), ['class' => 'btn btn-primary']) ?>

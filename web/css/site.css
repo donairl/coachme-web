@@ -114,3 +114,7 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+
+.needs-validation .invalid-feedback {
+  display: block !important;   
+}        

@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'adminEmail' => 'admin@coachme.com',
-    'title-app' => 'Welcome to Coach Bisnis Kuliner',
+    'adminEmail' => 'admin@coachbisniskuliner.com',
+    'title-app' => 'Coach Bisnis Kuliner (Preview Version)',
     'subtitle-app' => 'Ayo belajar Bisnis Kuliner',
-    'description-app' => 'Akselarasi bisnis kuliner secara cepat dan maknyuss',
+    'description-app' => 'Akselarasi belajar bisnis kuliner secara cepat dan maknyuss.<br>Cara Omset Meningkat cepat',
 ];

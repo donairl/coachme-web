@@ -10,6 +10,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\RegisterForm;
+use app\models\ActivationForm;
 use yii\filters\AccessControl;
 /**
  * UsersController implements the CRUD actions for MaUsers model.
@@ -187,7 +188,7 @@ class UsersController extends Controller
           
         $model = new RegisterForm();
         if ($model->load(Yii::$app->request->post()) && $model->register()) {
-            return $this->goBack();
+            return $this->redirect(['users/activation','uid'=>$model->username]);
         }
         return $this->render('register', [
             'model' => $model,
@@ -206,4 +207,9 @@ class UsersController extends Controller
         return $this->render('profile',['model'=>$model]);
     }
 
+    public function actionActivation($uid) {
+         $this->layout="clean";
+        $model= new ActivationForm();
+         return $this->render('activation',['model'=>$model]);   
+    }
 }

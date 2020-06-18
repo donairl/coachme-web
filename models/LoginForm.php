@@ -48,7 +48,9 @@ class LoginForm extends Model
             $user = $this->getUser();
 
             if (!$user || !$user->validatePassword($this->password)) {
-                $this->addError($attribute, 'Incorrect username or password.');
+                $this->addError($attribute, 'Username atau password Salah.');
+            } else if ($user->status==0) {
+                $this->addError($attribute, 'Anda belum melakukan aktivasi, kode aktivasi dikirim ke email anda');
             }
         }
     }

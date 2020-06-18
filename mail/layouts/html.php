@@ -15,7 +15,9 @@ use yii\helpers\Html;
 </head>
 <body>
     <?php $this->beginBody() ?>
+    <div style="padding: 30px; margin:10px; border: 1px solid #ccc">
     <?= $content ?>
+     <div>
     <?php $this->endBody() ?>
 </body>
 </html>
