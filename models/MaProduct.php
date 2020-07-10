@@ -43,9 +43,9 @@ class MaProduct extends \yii\db\ActiveRecord
             [['attachment1'], 'file','extensions' => 'jpg, png', 'mimeTypes' => 'image/jpeg, image/png',],
             [['price_unit'], 'number'],
             [['dept_id'], 'integer'],
-            [['product_name'], 'string', 'max' => 40],
+            [['product_name'], 'string', 'max' => 100],
             [['short_description'], 'string', 'max' => 200],
-            [['note','embed_url'], 'string'],
+            [['note','embed_url','post_type'], 'string'],
             [['unit'], 'string', 'max' => 12],
             [['picture'], 'string', 'max' => 60],
             [['category_id'], 'string', 'max' => 2],
@@ -60,7 +60,7 @@ class MaProduct extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'product_name' => Yii::t('app', 'Video Name'),
+            'product_name' => Yii::t('app', 'Judul'),
             'note' => Yii::t('app', 'Note'),
             'unit' => Yii::t('app', 'Minutes'),
             'price_unit' => Yii::t('app', 'Price'),

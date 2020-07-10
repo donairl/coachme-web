@@ -25,9 +25,12 @@ $list=ArrayHelper::map(MaCategory::find()->where(['dept_id'=>$session['dept_id']
     <?= $form->field($model, 'product_name')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'short_description')->textInput(['maxlength' => true]) ?>
+    <?php if ($model->post_type=='V'){ ?>
     <?= $form->field($model, 'embed_url')->textInput(['maxlength' => true]) ?>
+    <?php } ?>
+    <?=$form->field($model, 'post_type')->hiddenInput()->label(false)?>
     <?= $form->field($model, 'unit')->textInput(['maxlength' => true]) ?>
-    <?= $form->field($model, 'price_unit')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'price_unit')->hiddenInput(['value'=>0])->label(false) ?>
 
     <?//= $form->field($model, 'picture')->textInput(['maxlength' => true]) 
      if (!$model->isNewRecord) {
@@ -43,11 +46,11 @@ $list=ArrayHelper::map(MaCategory::find()->where(['dept_id'=>$session['dept_id']
     <?= $form->field($model, 'note')->widget(CKEditor::className(), [
                     'options' => ['rows' => 10,'id' =>'myckeditor'],
                     'preset' => 'full',
-                ]) ?>
+                ])?>
 
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton( '<i class="far fa-paper-plane"></i> '. $model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
         <?= Html::a(Yii::t('app', 'Back'), ['index', 'dept_id' => 1], ['class' => 'btn btn-dark']) ?>
     </div>
 

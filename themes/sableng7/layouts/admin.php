@@ -47,7 +47,7 @@ FontawesomeAsset::register($this);
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => [
                     ['label' => 'Home', 'url' => ['/admin/index']],
-                    ['label' => 'About', 'url' => ['/site/about']],
+                    ['label' => 'About', 'url' => ['/page/about']],
                     ['label' => 'Contact', 'url' => ['/site/contact']],
                     Yii::$app->user->isGuest ? (
                             ['label' => 'Login', 'url' => ['/users/login']]
@@ -76,16 +76,16 @@ FontawesomeAsset::register($this);
 
         <div class="container-fluid bg-wallpaper p-0">
             <div class="row">
-                <div class="col-2 side-menu">
+                <div class="col-md-2 side-menu  d-none d-lg-block">
 
                     <div class="white-box">
-                        <div class="title-side">Navigasi</div>
+                        <div class="title-side"><i class="fas fa-bars"></i> Navigasi</div>
                         <ul class="nav">
                             <li>
                                 <?= Html::a('<i class="fas fa-user-tie"></i> Dashboard', ['admin/index'], ['class' => '']) ?>
                             </li>
                             <li>
-                                <?= Html::a('<i class="fas fa-film"></i> Video Content', ['video/index'], ['class' => '']) ?>
+                                <?= Html::a('<i class="fas fa-film"></i> Konten', ['video/index'], ['class' => '']) ?>
                             </li>
                             <li>
                                 <?= Html::a('<i class="fas fa-user-tie"></i> User', ['users/index'], ['class' => '']) ?>
@@ -105,7 +105,7 @@ FontawesomeAsset::register($this);
                        </ul>
                     </div>
                 </div>
-                <div class="col-10">
+                <div class="col-12 col-lg-10">
                     <div class="page w-80 mx-auto" style="min-height:680px">
                         <?= $content ?>
                     </div>
@@ -121,7 +121,7 @@ FontawesomeAsset::register($this);
                     <?= date('Y') ?>
                 </p>
                 <p class="pull-right">
-                    <?= Yii::powered() ?>
+                    <?=Html::a('Copyright Information',['page/privacy'])?>
                 </p>
             </div>
         </footer>

@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?php
                 $form = ActiveForm::begin([
                             'id' => 'login-form',
-                            'options' => ['class' => 'needs-validation','novalidate'=>true ],
+                            'options' => ['class' => 'needs-validation', 'novalidate' => true],
                             'layout' => 'horizontal',
                             'fieldConfig' => [
                                 'template' => "{label}\n<div class=\"col-lg-10\">{input}</div>\n<div class=\"col-lg-12\">{error}</div>",
@@ -42,7 +42,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
                 <?= $form->field($model, 'password')->passwordInput() ?>
-<?= $form->field($model, 'rememberMe')->checkbox(); ?>
+                <?= $form->field($model, 'rememberMe')->checkbox(); ?>
 
                 <?
                 /*= $form->field($model, 'rememberMe')->checkbox([
@@ -50,18 +50,24 @@ $this->params['breadcrumbs'][] = $this->title;
                 ])*/ ?>
 
                 <div class="col-lg-offset-1" style="color:#999;">
-                    <?= Yii::t('app', 'Login username and password is case sensitive'); ?> <br>
-<?= Yii::t('app', 'If you don\'t have username yet, please register first, it is FREE'); ?><br>
+                    <?= Yii::t('app', 'Username dan password  sensitif case'); ?> <br>
+                    <?= Yii::t('app', 'Bila belum punya akaun silahkan register'); ?><br>
+                    <?= Yii::t('app', 'Bila sudah register tapi belum aktivasi, silahkan aktivasi dulu'); ?><br>
                     <br>
                 </div>
-                <div class="form-group">
-                    <div class="col-lg-offset-1 col-lg-11">
-                        <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
-<?= Html::a('Register', ['users/register'], ['class' => 'btn btn-success', 'name' => 'login-button']) ?>
+                <div class="row justify-content-md-center">
+                    <div class="col-lg-3">
+                        <?= Html::submitButton('<i class="fas fa-sign-in-alt"></i> Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+                    </div>
+                    <div class=" col-lg-3">
+                        <?= Html::a('<i class="far fa-address-book"></i> Register', ['users/register'], ['class' => 'btn btn-success', 'name' => 'login-button']) ?>
+                    </div>
+                    <div class=" col-lg-3">
+                        <?= Html::a('<i class="fas fa-door-open"></i> Aktivasi', ['users/activation'], ['class' => 'btn btn-success', 'name' => 'login-button']) ?>
                     </div>
                 </div>
 
-<?php ActiveForm::end(); ?>
+                <?php ActiveForm::end(); ?>
 
             </div>
         </div>

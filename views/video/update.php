@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $model app\models\MaProduct */
 
 $this->title = Yii::t('app', 'Update {modelClass}: ', [
-            'modelClass' => 'Video',
+            'modelClass' => ($model->post_type=='V')?Yii::t('app', 'Video'):Yii::t('app', 'Artikel'),
         ]) . $model->product_name;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Video'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];

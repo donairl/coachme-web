@@ -55,10 +55,10 @@ class MaCategory extends \yii\db\ActiveRecord
      */
     public function getDept()
     {
+
         return $this->hasOne(MaDepartment::className(), ['id' => 'dept_id']);
     }
-    
-   
+
 
     /**
      * @return \yii\db\ActiveQuery
@@ -68,11 +68,12 @@ class MaCategory extends \yii\db\ActiveRecord
         return $this->hasMany(MaProduct::className(), ['category_id' => 'category_code']);
     }
 
-    public function getCountproduct(){
-        $count = Yii::$app->db->createCommand('
-        SELECT COUNT(*) FROM ma_product WHERE category_id=:catid' ,
-        [':catid'=>$this->category_code])->queryScalar();
+    public function getCountproduct()
+    {
+        $count = Yii::$app->db->createCommand('SELECT COUNT(*) FROM ma_product WHERE category_id=:catid',
+            [':catid' => $this->category_code])->queryScalar();
 
         return $count;
+
     }
 }

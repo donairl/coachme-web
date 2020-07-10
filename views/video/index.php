@@ -11,7 +11,7 @@ use yii\helpers\Url;
 /* @var $searchModel app\models\MaProductSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Video');
+$this->title = 'Konten Editor';
 $this->params['breadcrumbs'][] = $this->title;
 
 $dataList = ArrayHelper::map(MaDepartment::find()->asArray()->all(), 'id', 'name');
@@ -28,7 +28,8 @@ $dataList = ArrayHelper::map(MaDepartment::find()->asArray()->all(), 'id', 'name
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Video Baru'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('<i class="fas fa-film"></i> '. Yii::t('app', 'Video Baru'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('<i class="fas fa-file-alt"></i> '.Yii::t('app', 'Artikel Baru'), ['create','post_type'=>'A'], ['class' => 'btn btn-success']) ?>
     </p>
     <?php Pjax::begin(); ?>    
     <?=
@@ -42,6 +43,7 @@ $dataList = ArrayHelper::map(MaDepartment::find()->asArray()->all(), 'id', 'name
             'product_name',
             'short_description',
             'unit',
+            'post_type',
             // 'price_unit',
             ['class' => 'yii\grid\ActionColumn'],
         // 'picture',

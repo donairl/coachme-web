@@ -14,7 +14,7 @@ use app\models\MaDepartment;
 
 class SiteController extends Controller
 {
-  
+
     /**
      * @inheritdoc
      */
@@ -31,7 +31,7 @@ class SiteController extends Controller
         ];
     }
 
-  
+
     /**
      * Displays homepage.
      *
@@ -39,51 +39,62 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $m=MaDepartment::find()->orderBy('sort_no')->all();
-        return $this->render('index',['model'=>$m]);
+        $m = MaDepartment::find()->orderBy('sort_no')->all();
+        return $this->render('index', ['model' => $m]);
     }
-    
+
     public function actionPayment()
     {
-        $m=MaDepartment::find()->orderBy('sort_no')->all();
-        return $this->render('payment',['model'=>$m]);
+        $m = MaDepartment::find()->orderBy('sort_no')->all();
+        return $this->render('payment', ['model' => $m]);
     }
-    
+
+    public function actionPage($id)
+    {
+        $model = MaProduct::findOne(['short_description' => $id]);
+
+        return $this->render('page', ['model' => $model]);
+    }
+
     public function actionPayment2nd($id)
     {
-        $m=MaDepartment::findOne($id);
-        return $this->render('payment2nd',['model'=>$m]);
+        $m = MaDepartment::findOne($id);
+        return $this->render('payment2nd', ['model' => $m]);
     }
-    
-     public function actionPayfinal()
+
+    public function actionPayfinal()
     {
-        $payMethod = Yii::$app->request->post('paymethod'); 
-        $payForClass = Yii::$app->request->post('payForClass'); 
-        $m=MaDepartment::findOne($payForClass);
-        
+        $payMethod = Yii::$app->request->post('paymethod');
+        $payForClass = Yii::$app->request->post('payForClass');
+        $m = MaDepartment::findOne($payForClass);
+
         $model = new \app\models\Transaction();
-        $model->invoice_no = Yii::$app->security->generateRandomString(6).'/'. date('mY');
+        $model->invoice_no = Yii::$app->security->generateRandomString(6) . '/' . date('mY');
         $model->paid_for_class = $payForClass;
-        $model->username =  Yii::$app->user->identity->username;
+        $model->username = Yii::$app->user->identity->username;
         $model->type_payment = $payMethod;
         $model->status_payment = 0;
         $model->total_paid = $m->price;
-        if (!$model->save()){
+        if (!$model->save()) {
             Yii::debug($model->username);
             var_dump($model->getErrors());
             die();
         }
-        
-        return $this->renderAjax('payfinal',['model'=>$model,'kelasModel'=> $m]);
+
+        return $this->renderAjax('payfinal', ['model' => $model, 'kelasModel' => $m]);
     }
-    
-    
-    
+
+
     public function actionSubindex($id)
     {
-        $m=MaCategory::find()->where(['dept_id'=>$id])->orderBy('category_code')->all();
-        $txt=MaDepartment::findOne($id)->name;
-        return $this->render('subindex',['model'=>$m,'deptname'=>$txt,'deptid'=>$id]);
+        if (\Yii::$app->user->isGuest) {
+            Yii::$app->session->setFlash('notif', 'Maaf, Anda harus login untuk melihat videonya');
+            return $this->redirect(['users/login']);
+        }
+
+        $m = MaCategory::find()->where(['dept_id' => $id])->orderBy('category_code')->all();
+        $txt = MaDepartment::findOne($id)->name;
+        return $this->render('subindex', ['model' => $m, 'deptname' => $txt, 'deptid' => $id]);
     }
 
     /**
@@ -92,8 +103,6 @@ class SiteController extends Controller
      * @return Response|string
      */
 
-
-   
 
     /**
      * Displays contact page.
@@ -123,23 +132,25 @@ class SiteController extends Controller
         return $this->render('about');
     }
 
-    public function actionProduct($catid='',$search='',$deptid='')
+    public function actionProduct($catid = '', $search = '', $deptid = '')
     {
-       // $cat=Yii::$app->request->get('cat');
+        // $cat=Yii::$app->request->get('cat');
 
-       $model=MaProduct::find()->andFilterWhere(['category_id'=> $catid])->andFilterWhere(['dept_id'=> $deptid])
-               ->andFilterWhere(['like','product_name',$search])->all();
-       
-       return $this->renderAjax('product',['model'=>$model]);
+        $model = MaProduct::find()->andFilterWhere(['category_id' => $catid])
+            ->andFilterWhere(['dept_id' => $deptid])
+            ->andFilterWhere(['post_type' => 'V'])
+            ->andFilterWhere(['like', 'product_name', $search])->all();
+
+        return $this->renderAjax('product', ['model' => $model]);
     }
 
-    public function actionBuyproduct($prdid='')
+    public function actionBuyproduct($prdid = '')
     {
         if (Yii::$app->user->isGuest) {
             \Yii::$app->getSession()->setFlash('notif', 'Please login to view');
             return $this->redirect(['users/login']);
         }
 
-      
+
     }
 }

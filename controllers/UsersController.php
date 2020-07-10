@@ -48,6 +48,23 @@ class UsersController extends Controller {
         ];
     }
 
+    public function beforeAction($action) {
+        if (!parent::beforeAction($action)) {
+            return false;
+        }
+
+    if ($action == 'index' || $action == 'update' || $action == 'create') {
+            if (\Yii::$app->user->isGuest) {
+                return $this->redirect(['users/login']);
+            } else if (\Yii::$app->user->identity->role != 1) {
+                return $this->redirect(['site/index']);
+            }
+        }
+
+
+        return true;
+    }
+
     /**
      * Lists all MaUsers models.
      * @return mixed
@@ -194,12 +211,12 @@ class UsersController extends Controller {
         return $this->render('profile', ['model' => $model]);
     }
 
-    public function actionActivation($uid) {
+    public function actionActivation($uid ='') {
         $this->layout = "clean";
         $model = new ActivationForm();
         $model->username = $uid;
-         if ($model->load(Yii::$app->request->post()) && $model->activation()) {
-             Yii::$app->session->setFlash('notif','Aktivasi anda sukses,silahkan login');
+        if ($model->load(Yii::$app->request->post()) && $model->activation()) {
+            Yii::$app->session->setFlash('notif', 'Aktivasi anda sukses,silahkan login');
             return $this->redirect(['users/login']);
         }
         return $this->render('activation', ['model' => $model]);

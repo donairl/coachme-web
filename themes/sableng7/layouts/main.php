@@ -35,7 +35,7 @@ ThemeAsset::register($this);
         $mnuNormal = [
             ['label' => 'Home', 'url' => ['/site/index']],
             ['label' => 'Register', 'url' => ['/users/register']],
-            ['label' => 'About', 'url' => ['/site/about']],
+            ['label' => 'About', 'url' => ['/page/about']],
         ];
 
 
@@ -55,7 +55,7 @@ ThemeAsset::register($this);
             ];
 
             if (\Yii::$app->user->identity->role == 2) {
-                $mnuNormal = array_merge($mnuNormal, [['label' => 'Upgrade', 'url' => ['/site/payment']]]);
+                $mnuNormal = array_merge($mnuNormal, [['label' => 'Upgrade', 'url' => ['/page/upgrade']]]);
             }
             $mnuNormal = array_merge($mnuNormal, $menuAdd);
         }
@@ -90,25 +90,23 @@ ThemeAsset::register($this);
                     <div class="row">
                         <div class="col-lg-4">  
                             <ul>
-                                <li>Legal</li>
-                                <li>Terms and Condition</li>
-                                <li>Privacy Policy</li>
-                                <li>Copyright Information</li>
-                                <li>Contact Us</li>
+                                <li><?=Html::a('Terms and Condition',['page/tnc'])?></li>
+                                <li><?=Html::a('Privacy Policy',['page/privacy'])?></li>
+                                <li><?=Html::a('Copyright Information',['page/privacy'])?></li>
+                                <li><?=Html::a('Contact Us',['site/contact'])?></li>
                             </ul>
                         </div>
                         <div class="col-lg-4">  
                             <ul>
-                                <li>Help Desk</li>
-                                <li>Site Map</li>
-                                <li>Status</li>
+                                <li><?=Html::a('Network Status',['page/status'])?></li>
+                                <li><?=Html::a('Site Map',['page/sitemap'])?></li>
                             </ul>
 
                         </div>
                         <div class="col-lg-4">  
                             <ul>
-                                <li>Support</li>
-                                <li>Client</li>
+                                <li><?=Html::a('About',['page/about'])?></li>
+                                <li><?=Html::a('Register',['users/register'])?></li>
                             </ul>
 
                         </div>

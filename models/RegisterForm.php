@@ -13,16 +13,31 @@ class RegisterForm extends Model {
     public $password;
     public $retype_password;
     public $sex;
-    public $bank;
-    public $bank_account_no;
-    public $bank_account_name;
+    public $igname;
+    public $fbname;
+    public $brandname;
+    public $address;
+    public $city;
+
+    /*
+      public $brand_name;
+      public $facebookUser;
+      public $instagramUser;
+      public $address;
+      public $city;
+
+     */
     public $phone_no;
 
     public function rules() {
         return [
             // username and password are both required
+            [['username'], 'unique', 'skipOnError' => true,
+                'targetClass' => MaUsers::className(),
+                'targetAttribute' => ['username' => 'username'],
+                'message' => 'username sudah digunakan, mohon entri yang lain'],
             [['username', 'password', 'retype_password', 'email', 'phone_no'], 'required'],
-            [['real_name', 'sex'], 'string'],
+            [['real_name', 'sex','fbname','igname','address','city'], 'string'],
             ['retype_password', 'checksame'],
             ['email', 'email']
         ];
@@ -55,20 +70,33 @@ class RegisterForm extends Model {
                 $mx = new MaUsersExtra();
                 $mx->username = $this->username;
                 $mx->phone_no = $this->phone_no;
-                $mx->otp_activation = rand(1000, 9999);
+                $mx->fbname = $this->fbname;
+                $mx->igname = $this->igname;
+                $mx->address = $this->address;
+                $mx->city = $this->city;
+                $mx->sex = $this->sex;
+                $mx->otp_activation = strval(rand(1000, 9999));
                 $b = $mx->save();
 
-                Yii::$app->mailer->compose('activation',
-                                ['otp_code' => $mx->otp_activation,
-                                    'username' => $this->username,
-                                    'realname' => $this->real_name]) // a view rendering result becomes the message body here
-                        ->setFrom(Yii::$app->params['adminEmail'])
-                        ->setTo($this->email)
-                        ->setSubject('[CoachBisnisKuliner] Kode Aktivasi OTP')
-                        ->send();
+                if (!$b) {
+                    Yii::trace($mx->getErrors());
+                }
+
+                if ($b) {
+                    Yii::$app->mailer->compose('activation',
+                                    ['otp_code' => $mx->otp_activation,
+                                        'username' => $this->username,
+                                        'password'=> $this->password,
+                                        'phone_no'=>$this->phone_no,
+                                        'realname' => $this->real_name]) // a view rendering result becomes the message body here
+                            ->setFrom(Yii::$app->params['adminEmail'])
+                            ->setTo($this->email)
+                            ->setSubject('[CoachBisnisKuliner] Kode Aktivasi OTP')
+                            ->send();
+                }
             }
 
-            return $a || $b;
+            return $a && $b;
         } else {
             return false;
         }
@@ -79,6 +107,11 @@ class RegisterForm extends Model {
             'real_name' => Yii::t('app', 'Nama Asli'),
             'username' => Yii::t('app', 'Username'),
             'password' => Yii::t('app', 'Password'),
+            'brandname' => Yii::t('app', 'Nama Brand'),
+            'fbname' => Yii::t('app', 'Facebook'),
+            'igname' => Yii::t('app', 'Instagram'),
+            'address' => Yii::t('app', 'Alamat'),
+            'city' => Yii::t('app', 'Kota'),
         ];
     }
 

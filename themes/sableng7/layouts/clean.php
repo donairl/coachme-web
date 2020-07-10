@@ -88,7 +88,7 @@ ThemeAsset::register($this);
                     <?= date('Y') ?>
                 </p>
                 <p class="pull-right">
-                    <?= Yii::powered() ?>
+                    <?=Html::a('Copyright Information',['page/privacy'])?>
                 </p>
             </div>
         </footer>

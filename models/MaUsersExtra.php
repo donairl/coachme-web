@@ -31,10 +31,10 @@ class MaUsersExtra extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [[ 'username', 'bank_name', 'bank_acc_no', 'bank_acc_name'], 'required'],
+            [[ 'username'], 'required'],
             [['id','current_class'], 'integer'],
             [['username'], 'string', 'max' => 225],
-            [['otp_activation'], 'string'],
+            [['otp_activation','city','brandname','fbname','igname'], 'string'],
             [['username'], 'exist', 'skipOnError' => true, 'targetClass' => MaUsers::className(), 'targetAttribute' => ['username' => 'username']],
         ];
     }

@@ -106,6 +106,7 @@ $config = [
             'rules' => [
                 '<controller:[\w-]+>/<id:\d+>' => '<controller>/view',
                 '<controller:[\w-]+>/<action:[\w-]+>/<id:\d+>' => '<controller>/<action>',
+                'page/<id:\w+>' => 'site/page',
             ],
         ],
       

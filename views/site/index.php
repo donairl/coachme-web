@@ -16,7 +16,7 @@ $this->title = 'Coach Bisnis Kuliner';
                     frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
             <br>
-            <a class="btn btn-dark" href="/users/register">Gabung Sekarang</a>
+            <a class="btn-lg btn-dark" href="/users/register">Ayo Gabung</a>
         </div>
     </div>
 

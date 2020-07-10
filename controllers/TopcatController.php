@@ -32,6 +32,21 @@ class TopcatController extends Controller
             ],
         ];
     }
+    
+    public function beforeAction($action) {
+        if (!parent::beforeAction($action)) {
+            return false;
+        }
+
+        if (\Yii::$app->user->isGuest) {
+            Yii::$app->session->setFlash('notif','Maaf, Anda harus login');
+            return $this->redirect(['users/login']);
+        } else if (\Yii::$app->user->identity->role != 1) {
+            return $this->redirect(['site/index']);
+        }
+
+        return true;
+    }
 
     /**
      * Lists all MaDepartment models.

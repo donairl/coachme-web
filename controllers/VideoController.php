@@ -35,6 +35,20 @@ class VideoController extends Controller
             ],
         ];
     }
+    
+    public function beforeAction($action) {
+        if (!parent::beforeAction($action)) {
+            return false;
+        }
+
+        if (\Yii::$app->user->isGuest) {
+            return $this->redirect(['users/login']);
+        } else if ( (\Yii::$app->user->identity->role != 1) && ( in_array($action,['index','view','update','create','delete']) )) {
+            return $this->redirect(['site/index']);
+        }
+
+        return true;
+    }
 
     /**
      * Lists all MaProduct models.
@@ -109,13 +123,16 @@ class VideoController extends Controller
     public function actionCreate()
     {
         $model = new MaProduct();
+        $model->post_type = Yii::$app->request->get('post_type','V');
+        
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             
-            //Yii::trace($model->getErrors());
-
+            Yii::trace($model->getErrors(),__METHOD__);
+           
+            
             return $this->render('create', [
                 'model' => $model,
             ]);

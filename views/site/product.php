@@ -22,16 +22,16 @@ use yii\helpers\Url;
                 <a href="<?= Url::to(['video/detail', 'id' => $r->id]) ?>">
                     <? if ($r->picture!='') { ?>
 
-                    <img src="<?= Url::to('@web/product/' . $r->picture) ?>">
+                    <img class="img-fluid" src="<?= Url::to('@web/product/' . $r->picture) ?>">
                     <? } else { ?>
-                    <img src="<?= Url::to('@web/product/play.jpg') ?>">
+                    <img class="img-fluid" src="<?= Url::to('https://img.youtube.com/vi/'.$r->embed_url.'/default.jpg') ?>">
 
                     <? } ?>
                 </a>
                 <p class="desc"><?= $r->short_description ?>  </p>
-                <p class="price">Rp <?= number_format($r->price_unit, 2) ?>/<?= $r->unit ?></p>
                 <!--
-                <p class="buy-section"><button class="btn btn-danger buythis"
+                <p class="price">Rp <?= number_format($r->price_unit, 2) ?>/<?= $r->unit ?></p>
+               <p class="buy-section"><button class="btn btn-danger buythis"
                         data-prdid="<?= $buy_url = Url::to(['product/addtocart', 'prdid' => $r->id]); ?>">
                         <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>&nbsp;View</button> </p>
                   
@@ -49,11 +49,8 @@ use yii\helpers\Url;
 $css = <<<CSS
 
 .col-prd img {
-  
-
     width:320px;
     height:200px;
-    margin-left:20px;
     border-radius:12px;
     -webkit-transition: .5s ease;
     -moz-transition: .5s ease;
