@@ -55,12 +55,12 @@ ThemeAsset::register($this);
             ];
 
             if (\Yii::$app->user->identity->role == 2) {
-                $mnuNormal = array_merge($mnuNormal, [['label' => 'Upgrade', 'url' => ['/page/upgrade']]]);
+                $mnuNormal = array_merge($mnuNormal, [['label' => 'Upgrade', 'url' => ['/site/payment']]]);
             }
             $mnuNormal = array_merge($mnuNormal, $menuAdd);
         }
 
-        NavBar::begin(['brandLabel' => 'Coach Me', 'options' => ['class' => 'navbar-expand-lg navbar-dark bg-dark']]);
+        NavBar::begin(['brandLabel' => 'CoachBiz', 'options' => ['class' => 'navbar-expand-lg navbar-dark bg-dark']]);
         echo Nav::widget([
             'items' => $mnuNormal
             ,

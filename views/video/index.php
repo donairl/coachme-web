@@ -56,7 +56,7 @@ $dataList = ArrayHelper::map(MaDepartment::find()->asArray()->all(), 'id', 'name
 </div>
 
 <?php
-$xurl = Url::to(['product/index']);
+$xurl = Url::to(['video/index']);
 $js = <<<JS
 
 $('#dept_id').change(

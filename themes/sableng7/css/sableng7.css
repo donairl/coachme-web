@@ -1,11 +1,12 @@
-
+/* sableng timestamp: 18072020 */
 
 html,
 body {
     height: 100%;
     margin: 0;
     font-family: 'Open Sans', sans-serif;
-    background-color: #edf1f5
+    background-color: #edf1f5;
+    
 }
 
 
@@ -27,7 +28,9 @@ body {
     color: #707cd2;
 }
 
-
+.view-video iframe{
+    width: 100%;
+}
 .two-part li span {
     font-size: 50px;
     font-weight: 100;
@@ -49,7 +52,7 @@ body {
 }
 
 .title-side{
-    font-size:26px;
+    font-size:22px;
     margin-left: -20px;
 }
 
@@ -169,7 +172,7 @@ white-box .box-title {
 .top-app .title-app {
     margin-top:0px;
     padding-top:16px;
-    color: #4FFF00;
+    color: #FFFF00;
     font-weight: bold;
 }
 
@@ -255,13 +258,24 @@ p {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
 }
+@media screen and (min-width: 1024px) {
+    .side-menu .white-box {
+     
+        width: 180px;
+    }
+}
 
 @media screen and (min-width: 768px) {
 
     .side-menu{
         padding: 0;
-
+  
     }
+    .view-video iframe{
+      width: 60%;
+      height:480px;
+    }
+
     .page {
         padding:32px;
     }

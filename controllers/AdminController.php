@@ -38,7 +38,8 @@ public function behaviors()
         ];
     }
     public function actionIndex() {
-        return $this->render('index');
+        
+        return $this->render('index',['member'=>0,'totalvideo'=>0,'totalview'=>0]);
     }
 
     public function actionListpo() {

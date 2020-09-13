@@ -5,7 +5,7 @@ $db = require(__DIR__ . '/db.php');
 
 $config = [
     'id' => 'basic',
-    'name'=>'Coach Me',
+    'name'=>'CoachBiz',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'components' => [
@@ -83,16 +83,16 @@ $config = [
             'bundles' => [
                 'yii\bootstrap4\BootstrapAsset' => [
                     'sourcePath' => null,
-                    'baseUrl' => 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css',
-                   // 'baseUrl' => 'http://assets.test',
+                    //'baseUrl' => 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css',
+                    'baseUrl' => 'http://assets.test/bootstrap/dist/css/',
                     'css' => [
                         'bootstrap.min.css'
                     ],
                 ],
                 'yii\bootstrap4\BootstrapPluginAsset' => [
                     'sourcePath' => null,
-                    'baseUrl' => 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js',
-                    //'baseUrl' => 'http://assets.test',
+                    //'baseUrl' => 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js',
+                    'baseUrl' => 'http://assets.test/bootstrap/dist/js/',
                     'js' => [
                         'bootstrap.bundle.min.js'
                     ],

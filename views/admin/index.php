@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <h3 class="box-title">Member Baru</h3>
             <ul class="list-inline two-part">
                 <li><i class="fa fa-user text-purple"></i></li>
-                <li class="text-right"><span class="counter">2369</span></li>
+                <li class="text-right"><span class="counter"><?=$member?></span></li>
             </ul>
         </div>
     </div>
@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <h3 class="box-title">Video</h3>
             <ul class="list-inline two-part">
                 <li><i class="fa fa-film text-success"></i></li>
-                <li class="text-right"><span class="counter">15</span></li>
+                <li class="text-right"><span class="counter"><?=$totalvideo?></span></li>
             </ul>
         </div>
     </div>
@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <h3 class="box-title">Jumlah Tonton</h3>
             <ul class="list-inline two-part">
                 <li><i class="fa fa-bell text-primary"></i></li>
-                <li class="text-right"><span class="counter">169</span></li>
+                <li class="text-right"><span class="counter"><?=$totalview?></span></li>
             </ul>
         </div>
     </div>
@@ -45,6 +45,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="row">
     <div class="col-lg-4 col-sm-12"><p>&nbsp;</p></div>
 </div>
+<!--
 <div class="row">
     <div class="col-lg-6">
         <div class="white-box">
@@ -63,6 +64,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
 </div>
+-->
 <div class="row site-admin">
 
     <div class="col-lg-12 info-box">
@@ -120,6 +122,7 @@ CSS;
 
 $this->registerCss($css);
 
+/*
 $js= <<<JS
    var ctx1 = document.getElementById("chart2").getContext("2d");
     var data1 = {
@@ -207,7 +210,9 @@ $js= <<<JS
         responsive: true
     });
 JS;
-$this->registerJsFile("@web/js/chart.min.js");
-$this->registerJs($js);
+ * */
+ 
+//$this->registerJsFile("@web/js/chart.min.js");
+//$this->registerJs($js);
 
 ?>

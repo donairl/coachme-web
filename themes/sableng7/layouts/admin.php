@@ -11,6 +11,7 @@ use app\assets\FontawesomeAsset;
 
 ThemeAsset::register($this);
 FontawesomeAsset::register($this);
+
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
