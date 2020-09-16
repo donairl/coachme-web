@@ -12,7 +12,7 @@ use Yii;
  * @property string $category_name
  *
  * @property MaDepartment $dept
- * @property MaProduct[] $maProducts
+ * @property MaContent[] $MaContents
  */
 class MaCategory extends \yii\db\ActiveRecord
 {
@@ -63,9 +63,9 @@ class MaCategory extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getMaProducts()
+    public function getMaContents()
     {
-        return $this->hasMany(MaProduct::className(), ['category_id' => 'category_code']);
+        return $this->hasMany(MaContent::className(), ['category_id' => 'category_code']);
     }
 
     public function getCountproduct()

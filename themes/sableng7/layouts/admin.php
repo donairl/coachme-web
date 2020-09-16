@@ -92,11 +92,11 @@ FontawesomeAsset::register($this);
                                 <?= Html::a('<i class="fas fa-user-tie"></i> User', ['users/index'], ['class' => '']) ?>
                             </li>
                             <li>
-                                <?= Html::a('<i class="fas fa-tasks"></i> Kategori', ['category/index'], ['class' => '']) ?>
+                                <?= Html::a('<i class="fas fa-tasks"></i> Sub Kategori', ['category/index'], ['class' => '']) ?>
 
                             </li>
                             <li>
-                                <?= Html::a('<i class="fas fa-paperclip"></i> Kelas', ['topcat/index'], ['class' => '']) ?>
+                                <?= Html::a('<i class="fas fa-paperclip"></i> Kategori', ['topcat/index'], ['class' => '']) ?>
 
                             </li>
                             <li>

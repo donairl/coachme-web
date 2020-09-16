@@ -12,7 +12,7 @@ use Yii;
  * @property string $item_name
  * @property string $price
  *
- * @property MaProduct $product
+ * @property MaContent $product
  */
 class SubProductItem extends \yii\db\ActiveRecord
 {
@@ -35,7 +35,7 @@ class SubProductItem extends \yii\db\ActiveRecord
             [['product_id'], 'integer'],
             [['price'], 'number'],
             [['item_name'], 'string', 'max' => 100],
-            [['product_id'], 'exist', 'skipOnError' => true, 'targetClass' => MaProduct::className(), 'targetAttribute' => ['product_id' => 'id']],
+            [['product_id'], 'exist', 'skipOnError' => true, 'targetClass' => MaContent::className(), 'targetAttribute' => ['product_id' => 'id']],
         ];
     }
 
@@ -58,7 +58,7 @@ class SubProductItem extends \yii\db\ActiveRecord
      */
     public function getProduct()
     {
-        return $this->hasOne(MaProduct::className(), ['id' => 'product_id']);
+        return $this->hasOne(MaContent::className(), ['id' => 'product_id']);
     }
 
    

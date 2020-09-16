@@ -19,7 +19,7 @@ use yii\web\UploadedFile;
  * @property Cart[] $carts
  * @property MaCategory $category
  */
-class MaProduct extends \yii\db\ActiveRecord
+class MaContent extends \yii\db\ActiveRecord
 {
     public $attachment1;
 

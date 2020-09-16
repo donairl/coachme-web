@@ -4,7 +4,7 @@ use yii\helpers\Html;
 
 
 /* @var $this yii\web\View */
-/* @var $model app\models\MaProduct */
+/* @var $model app\models\MaContent */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 <div class="row">

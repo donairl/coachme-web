@@ -5,12 +5,12 @@ namespace app\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\MaProduct;
+use app\models\MaContent;
 
 /**
- * MaProductSearch represents the model behind the search form about `app\models\MaProduct`.
+ * MaContentSearch represents the model behind the search form about `app\models\MaContent`.
  */
-class MaProductSearch extends MaProduct
+class MaContentSearch extends MaContent
 {
     /**
      * @inheritdoc
@@ -42,7 +42,7 @@ class MaProductSearch extends MaProduct
      */
     public function search($params)
     {
-        $query = MaProduct::find();
+        $query = MaContent::find();
 
         // add conditions that should always apply here
 

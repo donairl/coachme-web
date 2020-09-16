@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\MaProduct */
+/* @var $model app\models\MaContent */
 
 $this->title = Yii::t('app', 'Update {modelClass}: ', [
             'modelClass' => ($model->post_type=='V')?Yii::t('app', 'Video'):Yii::t('app', 'Artikel'),

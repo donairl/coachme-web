@@ -3,7 +3,7 @@
 
 use yii\helpers\Url;
 
-$this->title = 'Coach Me Video';
+$this->title = 'Video';
 ?>
 
 
@@ -64,7 +64,7 @@ $this->title = 'Coach Me Video';
 </div>
 
 <?php
-$prd_url = Url::to(['site/product', 'deptid' => $deptid]);
+$vid_url = Url::to(['site/video', 'deptid' => $deptid]);
 
 $js = <<<JS
    

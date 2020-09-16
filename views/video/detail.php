@@ -5,7 +5,7 @@ use yii\widgets\DetailView;
 use yii\helpers\Url;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\MaProduct */
+/* @var $model app\models\MaContent */
 
 $this->title = $model->short_description;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Video'), 'url' => ['index']];

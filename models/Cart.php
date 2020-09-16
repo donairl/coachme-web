@@ -13,7 +13,7 @@ use Yii;
  * @property string $username
  *
  * @property MaUsers $username0
- * @property MaProduct $product
+ * @property MaContent $product
  */
 class Cart extends \yii\db\ActiveRecord
 {
@@ -35,7 +35,7 @@ class Cart extends \yii\db\ActiveRecord
             [['product_id', 'qty'], 'integer'],
             [['username'], 'string', 'max' => 255],
             [['username'], 'exist', 'skipOnError' => true, 'targetClass' => MaUsers::className(), 'targetAttribute' => ['username' => 'username']],
-            [['product_id'], 'exist', 'skipOnError' => true, 'targetClass' => MaProduct::className(), 'targetAttribute' => ['product_id' => 'id']],
+            [['product_id'], 'exist', 'skipOnError' => true, 'targetClass' => MaContent::className(), 'targetAttribute' => ['product_id' => 'id']],
         ];
     }
 
@@ -65,6 +65,6 @@ class Cart extends \yii\db\ActiveRecord
      */
     public function getProduct()
     {
-        return $this->hasOne(MaProduct::className(), ['id' => 'product_id']);
+        return $this->hasOne(MaContent::className(), ['id' => 'product_id']);
     }
 }

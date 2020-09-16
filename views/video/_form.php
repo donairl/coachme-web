@@ -8,7 +8,7 @@ use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\MaProduct */
+/* @var $model app\models\MaContent */
 /* @var $form yii\widgets\ActiveForm */
 $session = Yii::$app->session;
 $list=ArrayHelper::map(MaCategory::find()->where(['dept_id'=>$session['dept_id']])->all(), 'category_code', 'category_name');

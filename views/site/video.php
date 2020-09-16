@@ -9,8 +9,8 @@ use yii\helpers\Url;
 <div class="product">
     <div class="row">
         <?
-        if (count($model)<1){
-
+        if (empty($model)){
+       
         echo "Tidak ada Data";
 
         } else 

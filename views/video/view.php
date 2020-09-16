@@ -5,7 +5,7 @@ use yii\widgets\DetailView;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\MaProduct */
+/* @var $model app\models\MaContent */
 
 $this->title = $model->product_name;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Products'), 'url' => ['index']];

@@ -8,8 +8,9 @@ use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\ContactForm;
-use app\models\MaProduct;
+use app\models\MaContent;
 use app\models\MaCategory;
+use app\models\MaContent;
 use app\models\MaDepartment;
 
 class SiteController extends Controller
@@ -51,7 +52,7 @@ class SiteController extends Controller
 
     public function actionPage($id)
     {
-        $model = MaProduct::findOne(['short_description' => $id]);
+        $model = MaContent::findOne(['short_description' => $id]);
 
         return $this->render('page', ['model' => $model]);
     }
@@ -137,11 +138,11 @@ class SiteController extends Controller
         return $this->render('about');
     }
 
-    public function actionProduct($catid = '', $search = '', $deptid = '')
+    public function actionVideo($catid = '', $search = '', $deptid = '')
     {
         // $cat=Yii::$app->request->get('cat');
 
-        $model = MaProduct::find()->andFilterWhere(['category_id' => $catid])
+        $model = MaContent::find()->andFilterWhere(['category_id' => $catid])
             ->andFilterWhere(['dept_id' => $deptid])
             ->andFilterWhere(['post_type' => 'V'])
             ->andFilterWhere(['like', 'product_name', $search])->all();

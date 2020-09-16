@@ -4,8 +4,8 @@ namespace app\controllers;
 
 use Yii;
 use app\models\SubProductItem;
-use app\models\MaProduct;
-use app\models\MaProductSearch;
+use app\models\MaContent;
+use app\models\MaContentSearch;
 use app\models\Cart;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -13,7 +13,7 @@ use yii\filters\VerbFilter;
 use yii\data\ActiveDataProvider;
 
 /**
- * ProductController implements the CRUD actions for MaProduct model.
+ * ProductController implements the CRUD actions for MaContent model.
  * in coachme product become video product
  */
 class VideoController extends Controller
@@ -51,12 +51,12 @@ class VideoController extends Controller
     }
 
     /**
-     * Lists all MaProduct models.
+     * Lists all MaContent models.
      * @return mixed
      */
     public function actionIndex($dept_id = 1)
     {
-        $searchModel = new MaProductSearch();
+        $searchModel = new MaContentSearch();
         $searchModel->dept_id=$dept_id;
 
      
@@ -72,7 +72,7 @@ class VideoController extends Controller
     }
 
     /**
-     * Displays a single MaProduct model.
+     * Displays a single MaContent model.
      * @param integer $id
      * @return mixed
      */
@@ -116,13 +116,13 @@ class VideoController extends Controller
     }
 
     /**
-     * Creates a new MaProduct model.
+     * Creates a new MaContent model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new MaProduct();
+        $model = new MaContent();
         $model->post_type = Yii::$app->request->get('post_type','V');
         
 
@@ -140,7 +140,7 @@ class VideoController extends Controller
     }
 
     /**
-     * Updates an existing MaProduct model.
+     * Updates an existing MaContent model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -159,7 +159,7 @@ class VideoController extends Controller
     }
 
     /**
-     * Deletes an existing MaProduct model.
+     * Deletes an existing MaContent model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -172,15 +172,15 @@ class VideoController extends Controller
     }
 
     /**
-     * Finds the MaProduct model based on its primary key value.
+     * Finds the MaContent model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return MaProduct the loaded model
+     * @return MaContent the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = MaProduct::findOne($id)) !== null) {
+        if (($model = MaContent::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

@@ -8,7 +8,7 @@ use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\MaProductSearch */
+/* @var $searchModel app\models\MaContentSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Konten Editor';
