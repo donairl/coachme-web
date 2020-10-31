@@ -10,7 +10,6 @@ use yii\filters\VerbFilter;
 use app\models\ContactForm;
 use app\models\MaContent;
 use app\models\MaCategory;
-use app\models\MaContent;
 use app\models\MaDepartment;
 
 class SiteController extends Controller
