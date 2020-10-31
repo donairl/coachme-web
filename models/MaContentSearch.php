@@ -72,6 +72,7 @@ class MaContentSearch extends MaContent
             ->andFilterWhere(['like', 'note', $this->note])
             ->andFilterWhere(['like', 'unit', $this->unit])
             ->andFilterWhere(['like', 'picture', $this->picture])
+            ->andFilterWhere([ 'post_type'=>$this->post_type])
             ->andFilterWhere(['like', 'category_id', $this->category_id]);
 
         return $dataProvider;

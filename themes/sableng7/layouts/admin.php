@@ -86,9 +86,12 @@ FontawesomeAsset::register($this);
                                 <?= Html::a('<i class="fas fa-user-tie"></i> Dashboard', ['admin/index'], ['class' => '']) ?>
                             </li>
                             <li>
-                                <?= Html::a('<i class="fas fa-film"></i> Konten', ['video/index'], ['class' => '']) ?>
+                                <?= Html::a('<i class="fas fa-film"></i> Video', ['mcontent/index'], ['class' => '']) ?>
                             </li>
                             <li>
+                                <?= Html::a('<i class="fas fa-film"></i> Article', ['mcontent/index','postType'=>'A'], ['class' => '']) ?>
+                            </li>
+                              <li>
                                 <?= Html::a('<i class="fas fa-user-tie"></i> User', ['users/index'], ['class' => '']) ?>
                             </li>
                             <li>

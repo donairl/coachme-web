@@ -38,8 +38,8 @@ $list = ArrayHelper::map($m, 'files', 'files');
     ?>
 
     <div class="form-group">
-<?= Html::submitButton('<i class="far fa-paper-plane"></i> '.$model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
-    <?= Html::a(Yii::t('app', 'Back'), ['index'], ['class' => 'btn btn-dark']) ?>
+<?= Html::submitButton('<i class="far fa-paper-plane"></i> '. ($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update')), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+    <?= Html::a('<i class="fas fa-undo-alt"></i> '.Yii::t('app', 'Back'), ['index'], ['class' => 'btn btn-dark']) ?>
     </div>
 
 <?php ActiveForm::end(); ?>

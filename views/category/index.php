@@ -19,10 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php Pjax::begin(); ?>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <p>
-        <?= Html::a(Yii::t('app', 'Baru'), ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-
+    
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
@@ -40,6 +37,10 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
+    <p>
+        <?= Html::a('<i class="far fa-plus-square"></i> '.Yii::t('app', 'Baru'), ['create'], ['class' => 'btn btn-success']) ?>
+    </p>
+
     <?php Pjax::end(); ?>
 </div>
 

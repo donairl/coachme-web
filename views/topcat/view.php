@@ -13,14 +13,15 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <div class="ma-department-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    
 
 
     <div class="info-box">
+    <h1><?= Html::encode($this->title) ?></h1>
         <p>
-            <?= Html::a(Yii::t('app', 'Edit'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+            <?= Html::a('<i class="far fa-edit"></i> '.Yii::t('app', 'Edit'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
             <?=
-            Html::a(Yii::t('app', 'Hapus'), ['delete', 'id' => $model->id], [
+            Html::a('<i class="far fa-trash-alt"></i> '.Yii::t('app', 'Hapus'), ['delete', 'id' => $model->id], [
                 'class' => 'btn btn-danger',
                 'data' => [
                     'confirm' => Yii::t('app', 'Yakin anda mau menghapus ?'),
@@ -28,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 ],
             ])
             ?>
-        <?= Html::a(Yii::t('app', 'Kembali'), ['index', 'id' => $model->id], ['class' => 'btn btn-grey']) ?>
+        <?= Html::a('<i class="fas fa-undo-alt"></i> '.Yii::t('app', 'Kembali'), ['index', 'id' => $model->id], ['class' => 'btn btn-grey']) ?>
         </p>
         <?=
         DetailView::widget([
