@@ -146,7 +146,7 @@ class SiteController extends Controller
             ->andFilterWhere(['post_type' => 'V'])
             ->andFilterWhere(['like', 'product_name', $search])->all();
 
-        return $this->renderAjax('product', ['model' => $model]);
+        return $this->renderAjax('video', ['model' => $model]);
     }
 
     public function actionBuyproduct($prdid = '')

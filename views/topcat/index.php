@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]); ?>
       <p>
-        <?= Html::a('<i class="far fa-plus-square"></i> '.Yii::t('app', 'Baru'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('<i class="far fa-plus-square"></i>&nbsp;'.Yii::t('app', 'Baru'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 <?php Pjax::end(); ?></div>
 

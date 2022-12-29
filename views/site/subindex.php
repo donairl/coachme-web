@@ -68,7 +68,7 @@ $vid_url = Url::to(['site/video', 'deptid' => $deptid]);
 
 $js = <<<JS
    
-  $('#product').load('$prd_url');
+  $('#product').load('$vid_url');
 
   $('.cat-list').click(
     function(){
@@ -82,7 +82,7 @@ $js = <<<JS
   $('#btnGo').click(
     function(){
       var xcari=$('#txtSearch').val();
-      $('#product').load('$prd_url?search='+xcari);
+      $('#product').load('$vid_url?search='+xcari);
       $('#xtitle').html('Pencarian "'+xcari+'"');
 
     }
