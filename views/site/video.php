@@ -19,7 +19,7 @@ use yii\helpers\Url;
         <div class="col-lg-4">
             <div class="col-prd" style="height:540px">
                 <p class="title"><?= $r->product_name ?></p>
-                <a href="<?= Url::to(['video/detail', 'id' => $r->id]) ?>">
+                <a href="<?= Url::to(['mcontent/detail', 'id' => $r->id]) ?>">
                     <? if ($r->picture!='') { ?>
 
                     <img class="img-fluid" src="<?= Url::to('@web/product/' . $r->picture) ?>">
