@@ -1,4 +1,4 @@
-WEB VIDEO COACH
+WEB VIDEO CONTENT MANAGEMENT 
 ============================
 
 ###A. What is this?
