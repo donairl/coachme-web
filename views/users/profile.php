@@ -29,7 +29,7 @@ use yii\bootstrap5\ActiveForm;
         <label class="col-sm-4" for="mausers-role">Tanggal Registrasi</label>
         <div class="col-sm-8">
 
-             <? echo date("Y-m-d H:i:s", $model->created_at);?>
+             <?php echo date("Y-m-d H:i:s", $model->created_at);?>
         </div>
     </div>
     <div class="form-group row field-mausers-role ">

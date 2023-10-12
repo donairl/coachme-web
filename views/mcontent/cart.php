@@ -22,7 +22,7 @@ use yii\helpers\Html;
 </thead>
 
 <tbody>
-<? foreach($model as $v){ 
+<?php foreach($model as $v){ 
 $subtot= $v->qty* $v->product->price_unit;  
 $tot+=$subtot;
 

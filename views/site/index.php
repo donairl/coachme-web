@@ -19,7 +19,7 @@ $this->title = 'Coach Bisnis Kuliner';
                     allowfullscreen></iframe>
             -->        
             </div><br>
-            <a class="btn-lg btn-dark" href="/users/register"><i class="fas fa-user-edit"></i>Klik disini</a>
+            <a class="btn-lg btn-dark" href="/users/register"><i class="fas fa-user-edit"></i>Daftar Disini</a>
         </div>
     </div>
 

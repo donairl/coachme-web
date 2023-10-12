@@ -29,7 +29,7 @@ Dear <?= $realname ?>,
         <td><?= $otp_code ?></td>
     </tr>
 </table>
-<p>Untuk mengaktivasi account anda silahkan kunjungi halaman <? Url::to(['/users/activation','uid'=>$username],true)?> <br> Atau click 
+<p>Untuk mengaktivasi account anda silahkan kunjungi halaman <?= Url::to(['/users/activation','uid'=>$username],true)?> <br> Atau click 
     <?= Html::a('disini', Url::to(['/users/activation', 'uid' => $username], true)) ?><br>
    Anda disarankan mengganti password anda setelah login demi keamanan login anda. 
 </p> 

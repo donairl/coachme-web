@@ -44,14 +44,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?= $form->field($model, 'password')->passwordInput() ?>
                 <?= $form->field($model, 'rememberMe')->checkbox(); ?>
 
-                <?
-                /*= $form->field($model, 'rememberMe')->checkbox([
-                'template' => "<div class=\"col-lg-offset-1 col-lg-3\">{input} {label}</div>\n<div class=\"col-lg-8\">{error}</div>",
-                ])*/ ?>
+            
 
                 <div class="col-lg-offset-1" style="color:#999;">
                     <?= Yii::t('app', 'Username dan password  sensitif case'); ?> <br>
-                    <?= Yii::t('app', 'Bila belum punya akaun silahkan register'); ?><br>
+                    <?= Yii::t('app', 'Belum punya akaun silahkan register'); ?><br>
                     <?= Yii::t('app', 'Bila sudah register tapi belum aktivasi, silahkan aktivasi dulu'); ?><br>
                     <br>
                 </div>

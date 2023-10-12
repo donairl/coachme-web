@@ -40,7 +40,12 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $m = MaDepartment::find()->orderBy('sort_no')->all();
-        return $this->render('index', ['model' => $m]);
+
+        if (Yii::$app->user->isGuest) {
+            return $this->render('index', ['model' => $m]);
+        } else{
+            return $this->render('index-member', ['model' => $m]);
+        }
     }
 
     public function actionPayment()
@@ -75,6 +80,7 @@ class SiteController extends Controller
         $model->type_payment = $payMethod;
         $model->status_payment = 0;
         $model->total_paid = $m->price;
+        
         if (!$model->save()) {
             Yii::debug($model->username);
             var_dump($model->getErrors());

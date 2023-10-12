@@ -32,11 +32,11 @@ use yii\helpers\Url;
                         <h3>
                             <?= $r->name ?>
                         </h3>
-                        <? if ($r->price > 0){ ?>
+                        <?php if ($r->price > 0){ ?>
                         <p class="buy-section"><button class="btn btn-danger buythis"
                                                        data-prdid="<?= Url::to(['site/payment2nd', 'id' => $r->id]); ?>">
                                 <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;Beli</button> </p>
-                        <? } ?>
+                        <?php } ?>
                     </div>
                 </div>
                 <div class="note text-left" style="min-height: 160px">
