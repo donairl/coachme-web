@@ -4,6 +4,7 @@
 use yii\helpers\Url;
 
 $this->title = 'Video';
+$xurl = '';
 ?>
 
 
@@ -12,23 +13,22 @@ $this->title = 'Video';
     <div class="row">
         <div class="col-lg-2">
             <div class="white-box menu-overlay">
-                <? if (count($model)>0){ ?>
-                <h4 id="xtitle"><?= $deptname ?></h4>
-                <hr>
-                <h6>Sub Kategori</h6>
-                <div class="list-group">
-                    <? foreach($model as $r){ 
-                    $xurl=Url::to(['site/product','catid'=>$r->category_code]);?>
-                    <a href="#" data-url="<?= $xurl ?>" data-name="<?= $r->category_name ?>" class="list-group-item cat-list">
-                        <?= $r->category_name ?>&nbsp;&nbsp;<span class="badge badge-info">
-                            <?= $r->countproduct ?></span></a>
-                    <? } ?>
+                <?php if (count($model) > 0) { ?>
+                    <h4 id="xtitle"><?= $deptname ?></h4>
+                    <hr>
+                    <h6>Sub Kategori</h6>
+                    <div class="list-group">
+                        <?php foreach ($model as $r) {
+                            $xurl = Url::to(['site/product', 'catid' => $r->category_code]); ?>
+                            <a href="#" data-url="<?= $xurl ?>" data-name="<?= $r->category_name ?>" class="list-group-item cat-list">
+                                <?= $r->category_name ?>&nbsp;&nbsp;<span class="badge badge-info">
+                                    <?= $r->countproduct ?></span></a>
+                        <?php } ?>
 
-                </div>
-                <? 
+                    </div>
+                <?php
                 } else {
-                echo "Tak ada Data";  
-
+                    echo "Tak ada Data";
                 }
                 ?>
             </div>

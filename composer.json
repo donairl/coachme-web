@@ -14,25 +14,19 @@
     },
     "minimum-stability": "stable",
     "require": {
-        "php": ">=5.4.0",
-        "yidas/yii2-composer-bower-skip": "~2.0.0",
+        "php": ">=8.0.0",
+        "yidas/yii2-composer-bower-skip": "*",
         "yiisoft/yii2": "~2.0.31",
-        "yiisoft/yii2-bootstrap": "~2.0.0",
-        "yiisoft/yii2-swiftmailer": "~2.0.0",
         "2amigos/yii2-ckeditor-widget": "^2.1",
         "kartik-v/yii2-widget-fileinput": "dev-master",
         "kartik-v/yii2-grid": "dev-master",
         "bizley/migration": "3.6",
-        "yiisoft/yii2-bootstrap4": "^2.0"
+        "yiisoft/yii2-bootstrap5": "*"
     },
     "require-dev": {
-        "yiisoft/yii2-debug": "~2.0.0",
-        "yiisoft/yii2-gii": "~2.0.0",
-        "yiisoft/yii2-faker": "~2.0.0",
-
-        "codeception/base": "^2.2.3",
-        "codeception/verify": "~0.3.1",
-        "codeception/specify": "~0.4.3"
+      "yiisoft/yii2-debug": "*",
+       "yiisoft/yii2-gii": "~2.2.6"
+       
     },
     "replace": {
         "npm-asset/bootstrap": ">=4.2.1"
@@ -44,6 +38,9 @@
                 "npm-asset-library": "vendor/npm",
                 "bower-asset-library": "vendor/bower"
             }
+        },
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true
         }
     },
     "scripts": {

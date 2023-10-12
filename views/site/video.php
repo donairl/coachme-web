@@ -8,7 +8,7 @@ use yii\helpers\Url;
 
 <div class="product">
     <div class="row">
-        <?
+        <?php
         if (empty($model)){
        
         echo "Tidak ada Data";
@@ -20,13 +20,13 @@ use yii\helpers\Url;
             <div class="col-prd" style="height:540px">
                 <p class="title"><?= $r->product_name ?></p>
                 <a href="<?= Url::to(['mcontent/detail', 'id' => $r->id]) ?>">
-                    <? if ($r->picture!='') { ?>
+                    <?php if ($r->picture!='') { ?>
 
                     <img class="img-fluid" src="<?= Url::to('@web/product/' . $r->picture) ?>">
-                    <? } else { ?>
+                    <?php } else { ?>
                     <img class="img-fluid" src="<?= Url::to('https://img.youtube.com/vi/'.$r->embed_url.'/default.jpg') ?>">
 
-                    <? } ?>
+                    <?php } ?>
                 </a>
                 <p class="desc"><?= $r->short_description ?>  </p>
                 <!--
@@ -40,7 +40,7 @@ use yii\helpers\Url;
 
         </div>
 
-        <?
+        <?php
         }
         ?>
     </div>

@@ -8,6 +8,10 @@ $config = [
     'name'=>'CoachBiz',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+	'aliases' => [
+    '@bower' => '@vendor/bower-asset',
+    '@npm'   => '@vendor/bower-asset',
+],
     'components' => [
         'view' => [
             'theme' => [
@@ -81,7 +85,7 @@ $config = [
         'assetManager' => [
             // override bundles to use CDN :
             'bundles' => [
-                'yii\bootstrap4\BootstrapAsset' => [
+                'yii\bootstrap5\BootstrapAsset' => [
                     'sourcePath' => null,
                     //'baseUrl' => 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css',
                     'baseUrl' => 'http://assets.test/bootstrap/dist/css/',
@@ -89,7 +93,7 @@ $config = [
                         'bootstrap.min.css'
                     ],
                 ],
-                'yii\bootstrap4\BootstrapPluginAsset' => [
+                'yii\bootstrap5\BootstrapPluginAsset' => [
                     'sourcePath' => null,
                     //'baseUrl' => 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js',
                     'baseUrl' => 'http://assets.test/bootstrap/dist/js/',
